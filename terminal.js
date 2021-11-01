@@ -45,7 +45,7 @@ const terminalScript = t => {
     //set p5js canvas to desired canvas element
     let w = t.min(t.windowWidth * 0.8, 800);
     let h = t.max(t.windowHeight * 0.3, 300);
-    t.createCanvas(w, h).parent("p5js-canvas");
+    //t.createCanvas(w, h).parent("p5js-canvas");
 
     //set default text properties using global t obj, use push pop elsewhere if necessary
     t.textSize(text.size);
@@ -134,4 +134,4 @@ const terminalScript = t => {
   }
 }
 
-new p5(terminalScript);
+let myP5 = new p5(terminalScript, "p5js-canvas");
