@@ -100,6 +100,10 @@ canvas {
   border: none;
 }
 
+#background-canvas {
+  z-index: -1;
+}
+
 .main-title {
   text-decoration: underline;
   font-size: min(6vw, 4em);
