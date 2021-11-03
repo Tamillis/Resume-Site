@@ -101,7 +101,7 @@ canvas {
 }
 
 #background-canvas {
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 .main-title {
@@ -116,6 +116,11 @@ canvas {
   font-size: min(4vw, 2em);
   text-indent: 2em;
   padding-bottom: 5px;
+}
+
+.subtitle-synopsis {
+  text-indent: 6em;
+  font-size: min(2vw, 1em);
 }
 
 .profile-pic {
@@ -144,6 +149,18 @@ canvas {
 
 .inline-subtitle {
   font-style: italic;
+  font-weight: bold;
+}
+
+.intext-link, .intext-link:link, .intext-link:visited {
+  text-decoration: none;
+  color: var(--text-color);
+  font-style: normal;
+}
+
+.intext-link:hover {
+  text-decoration: underline;
+  font-style: inherit;
   font-weight: bold;
 }
 

@@ -16,7 +16,7 @@ const terminalScript = t => {
   var text = {
     color: "#008f11",
     size: 42,
-    font: "IBM Plex Mono"
+    font: "IBMPlexMono-Regular"
   }
 
   //the script as a line by line array, as loaded in line by line
@@ -41,11 +41,11 @@ const terminalScript = t => {
     script = t.loadStrings("assets/messages.txt");
   }
 
-  t.setup = function(){
+  t.setup = function() {
     //set p5js canvas to desired canvas element
     let w = t.min(t.windowWidth * 0.8, 800);
     let h = t.max(t.windowHeight * 0.3, 300);
-    //t.createCanvas(w, h).parent("p5js-canvas");
+    t.createCanvas(w, h); //.parent("p5js-canvas");
 
     //set default text properties using global t obj, use push pop elsewhere if necessary
     t.textSize(text.size);
@@ -63,13 +63,13 @@ const terminalScript = t => {
     textContent = getTextContent();
 
     //dynamic text size, either the default size or 16 characters wide (maybe?)
-    let correctedTextSize = t.min(text.size, width / 16);
+    let correctedTextSize = t.min(text.size, t.width / 16);
     t.textSize(correctedTextSize);
 
     //display that text in a wrapped box
     //for ease of editing set a margin variable
     let margin = correctedTextSize / 2;
-    t.text(textContent, margin, margin, width - margin, height - margin)
+    t.text(textContent, margin, margin, t.width - margin, t.height - margin)
   }
 
   function updateScriptIndex() {
@@ -95,7 +95,7 @@ const terminalScript = t => {
     curLine = script[scriptIndex];
   }
 
-  t.getTextContent = function () {
+  function getTextContent() {
     let msg = "";
 
     //let the message equal the slice of the current script line up to the current msg length curMsgLen
@@ -103,7 +103,7 @@ const terminalScript = t => {
 
     //if there have been enough frames for a message update, 
     //and the current message length isnt longer than the current message line
-    if (frameCount % framesPerUpdate == 0 && curMsgLen < curLine.length) curMsgLen++;
+    if (t.frameCount % framesPerUpdate == 0 && curMsgLen < curLine.length) curMsgLen++;
     else if (blinks > blinksPerCycle) {
       curMsgLen = 0;
       blinks = 0;
@@ -113,7 +113,7 @@ const terminalScript = t => {
 
     //if there have been enough frames for half a blink cycle
     //(i.e. so that for one cycle, its half on and half off)
-    if (frameCount % (framesPerBlinkCycle / 2) == 0) {
+    if (t.frameCount % (framesPerBlinkCycle / 2) == 0) {
 
       if (blinkOn) {
         if (curMsgLen >= curLine.length) blinks++;
@@ -134,4 +134,4 @@ const terminalScript = t => {
   }
 }
 
-let myP5 = new p5(terminalScript, "p5js-canvas");
+let myTerminal = new p5(terminalScript, "p5js-canvas");

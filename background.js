@@ -4,7 +4,7 @@ const stormScript = s => {
 
     s.setup = function() {
         //set p5js canvas to desired canvas element
-        s.createCanvas(windowWidth, windowHeight).parent("background-canvas");
+        //s.createCanvas(windowWidth, windowHeight).parent("background-canvas");
 
         s.stroke(220);
         s.angleMode(DEGREES);
@@ -21,4 +21,4 @@ const stormScript = s => {
     }
 }
 
-let aStorm = new p5(stormScript);
+let myBackground = new p5(stormScript, "background-canvas");
