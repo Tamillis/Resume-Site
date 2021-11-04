@@ -7,7 +7,7 @@
   --contrastLight: #f4a261;
   --contrastDark: #e76f51;
   --sidebarWidth: 145px;
-  --sectionMargin: 2em;
+  --sectionMargin: 5vw;
 }
 
 * {
@@ -90,7 +90,7 @@ canvas {
 
 .section {
   width: auto;
-  margin: var(--sectionMargin);
+  margin: 5px var(--sectionMargin);
   padding: 1em;
   transition: 0.5s;
   border: var(--highlight) 4px groove;
@@ -120,7 +120,7 @@ canvas {
 
 .subtitle-synopsis {
   text-indent: 6em;
-  font-size: min(2vw, 1em);
+  font-size: min(2vw, 1.1em);
 }
 
 .profile-pic {
@@ -145,6 +145,10 @@ canvas {
   font-size: 1em;
   text-indent: 2em;
   text-rendering: optimizeLegibility;
+}
+
+.main-text p {
+  margin: 5px 0px;
 }
 
 .inline-subtitle {
