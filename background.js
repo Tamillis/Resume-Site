@@ -1,24 +1,27 @@
 const stormScript = s => {
 
     let storm;
+    let stormCanvas;
 
     s.setup = function() {
-        //set p5js canvas to desired canvas element
-        //s.createCanvas(windowWidth, windowHeight).parent("background-canvas");
+        stormCanvas = s.createCanvas(s.windowWidth, s.windowHeight);
+        stormCanvas.position(0,0);
+        stormCanvas.style("z-index", "-1");
 
         s.stroke(220);
-        s.angleMode(DEGREES);
+        s.angleMode(s.DEGREES);
 
-        storm = new Snowstorm();
+        storm = new Snowstorm(s);
     }
 
     s.draw = function() {
-        storm.draw();
+        s.background(s.color("#2a312d"));
+        storm.draw(s);
     }
 
     s.windowResized = function() {
-        s.resizeCanvas(windowWidth, windowHeight);
+        s.resizeCanvas(s.windowWidth, s.windowHeight);
     }
 }
 
-let myBackground = new p5(stormScript, "background-canvas");
+let myBackground = new p5(stormScript);

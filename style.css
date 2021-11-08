@@ -18,8 +18,12 @@
 }
 
 html, body {
-  background-color: var(--background);
+  /* background-color: var(--background); */
   color: var(--text-color);
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .sidebar {
@@ -60,7 +64,7 @@ html, body {
 }
 
 .nav-btn {
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -75,7 +79,7 @@ html, body {
   border: none;
 }
 
-canvas {
+#p5js-canvas canvas {
   display: block;
   width: auto;
   margin: 2em auto;
@@ -90,18 +94,20 @@ canvas {
 
 .section {
   width: auto;
+  /* background-color: rgba(0, 0, 0, 0.1); */
   margin: 5px var(--sectionMargin);
   padding: 1em;
   transition: 0.5s;
-  border: var(--highlight) 4px groove;
+  /* border: var(--highlight) 4px groove; */
 }
 
 #terminal-section {
   border: none;
 }
 
-#background-canvas {
-  /* z-index: -1; */
+#background-canvas, canvas {
+  z-index: 0;
+  /* border: red solid 5px; */
 }
 
 .main-title {
