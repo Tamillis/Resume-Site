@@ -18,8 +18,12 @@
 }
 
 html, body {
-  /* background-color: var(--background); */
+  background-color: var(--background);
   color: var(--text-color);
+}
+
+.no-bg {
+  background-color: rgba(0,0,0,0);
 }
 
 .underline {
@@ -98,7 +102,11 @@ html, body {
   margin: 5px var(--sectionMargin);
   padding: 1em;
   transition: 0.5s;
-  /* border: var(--highlight) 4px groove; */
+  border: var(--highlight) 4px groove;
+}
+
+.no-border {
+  border: none;
 }
 
 #terminal-section {

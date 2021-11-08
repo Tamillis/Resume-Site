@@ -24,4 +24,4 @@ const stormScript = s => {
     }
 }
 
-let myBackground = new p5(stormScript);
+let myBackground = new p5(stormScript, "background-canvas");
