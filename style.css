@@ -20,10 +20,24 @@
 html, body {
   background-color: var(--background);
   color: var(--text-color);
+
+  height: min(auto, 80vh);
 }
 
 .no-bg {
   background-color: rgba(0,0,0,0);
+}
+
+.bg-black-transparent-0p1 {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.bg-black-transparent-0p3 {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.bg-black-transparent-0p5 {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .underline {
@@ -98,7 +112,6 @@ html, body {
 
 .section {
   width: auto;
-  /* background-color: rgba(0, 0, 0, 0.1); */
   margin: 5px var(--sectionMargin);
   padding: 1em;
   transition: 0.5s;
@@ -114,7 +127,7 @@ html, body {
 }
 
 #background-canvas, canvas {
-  z-index: 0;
+  z-index: -1;
   /* border: red solid 5px; */
 }
 
@@ -180,6 +193,24 @@ html, body {
   text-decoration: underline;
   font-style: inherit;
   font-weight: bold;
+}
+
+.background-image {
+  z-index: -1;
+
+  position: absolute;
+  width: 100vw;
+  height: inherit;
+}
+
+.bg-img-pineforest {
+  background: none;
+  background-image: url("assets/pine-forest-bg.jpg");
+  
+  height: 100%;
+  background-size: 100vw;
+  background-position: 0px -20vh;
+  background-repeat: no-repeat;
 }
 
 .main-footer {
