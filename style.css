@@ -83,18 +83,33 @@ html, body {
 
 .nav-btn {
   z-index: 2;
+
   position: absolute;
   top: 0px;
   left: 0px;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  color: var(--text-color);
-  background-color: var(--highlight);
-  padding: 0 2px;
+
+  padding: 0px 2px;
+  margin: 0px;
+  border: none;
+
   height: 2em;
   width: 2em;
-  border: none;
+
+  color: var(--text-color);
+  background-color: var(--highlight);
+}
+
+.btn {
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-color);
+  background-color: var(--color);
+  padding: 5px 10px;
+  
+  display: block;
+  margin: 0px auto;
+
+  border: solid 2px var(--highlight);
 }
 
 #p5js-canvas canvas {
@@ -225,13 +240,16 @@ html, body {
   opacity: 0.8;
 }
 
-/* Kindly borrowed from stackoverflow */
+/* Kindly borrowed from stackoverflow for getting CSS to fit an iframe neatly */
 
 .wrap {
-  width: 400px;
-  height: 400px;
+/* set display to none initially for site speed */
+  display: none;
+  width: 420px;
+  height: 450px;
   padding: 0;
-  overflow: hidden;
+  overflow: none;
+  scrollbar-width: 0;
   margin: 1em auto;
 }
 

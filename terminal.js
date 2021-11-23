@@ -27,7 +27,7 @@ const terminalScript = t => {
   //the current line of the script
   var curLine = "Default text";
 
-  t.preload = function() {
+  t.preload = function () {
     t.font = t.loadFont("assets/IBMPlexMono-Regular.ttf");
 
     //load the text into the file
@@ -41,7 +41,7 @@ const terminalScript = t => {
     script = t.loadStrings("assets/messages.txt");
   }
 
-  t.setup = function() {
+  t.setup = function () {
     //set p5js canvas to desired canvas element
     let w = t.min(t.windowWidth * 0.8, 800);
     let h = t.max(t.windowHeight * 0.3, 300);
@@ -56,7 +56,7 @@ const terminalScript = t => {
     curLine = script[script.length - 1];
   }
 
-  t.draw = function() {
+  t.draw = function () {
     t.background(t.color(backgroundColour));
 
     //generate current text content (textContent) based on animation state and current script line
@@ -127,7 +127,7 @@ const terminalScript = t => {
     return msg;
   }
 
-  t.windowResized = function() {
+  t.windowResized = function () {
     let w = t.min(t.windowWidth * 0.8, 800);
     let h = t.max(t.windowHeight * 0.3, 300);
     t.resizeCanvas(w, h);

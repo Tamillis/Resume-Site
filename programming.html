@@ -42,67 +42,57 @@
       <h2 class="subtitle">So what's this about?</h2>
       <div class="main-text">
         <p>
-          Over the years I've dabbled in various programming languages and environments. For me it started way back in
+          Over the years I've dabbled in various programming languages and environments. For me it started back in
           sixth-form college where I took my first Computing class that used BASIC as its language of instruction and
           welcome into the wonderful world of computer programming. Within the (old) visual studio suite I learned first
-          to make my fullscreen form flash random colours. It’s been my Hello World ever since.<br><br>
+          to make my fullscreen form flash random colours. It’s been my way of saying Hello World ever since.<br><br>
           I can’t say I’m an expert at any of the languages I use, I’ll let you be the judge of that, but I have managed
           to drag myself to a level of familiarity with Python, Java, C# and JavaScript in that order. Most recently
           I’ve put myself through a program of learning CSS and HTML, the product of which is what you see here. Nothing
           more than some static functionality along with some usage of server side files, but for now I’m proud of what
-          I’ve managed to get together over the course of a month or so.<br><br>
+          I’ve managed to get together over the course of a few months or so.<br><br>
           Below you will find iframes of my various other projects that I’m willing to let the wider world see, mostly
           in JavaScript and Java through the handy library of P5JS and Processing3. I’m afraid my old PyGame ventures
           from 16 year old me are lost to the void. Thankfully, haha. And maybe one of these days I’ll get around to
           finish the Brickbreak clone I was throwing together in C# and Monogame.<br><br>
+          What is difficult to show are my ventures into Linux and learning the terminal, but I got far enough to be able to say "I use Arch by the way." Although honesty does compel me to say that it is not my daily driver. <br><br>
           Anyway, here’s my showcase, if you have any questions regarding any of them in particular please feel free to
-          click ‘query’ which will take you to a customised email which I have set up to a filter.
+          contact me via the nav menu which will take you to a customised email which I have set up to a filter.
         </p>
       </div>
 
       <h2 class="subtitle">Randomly Coloring Tiles</h2>
       <p class="main-text">As noted, my first foray into something nearly always involves filling the screen with random
         colours. Like this.</p>
-      <div class="wrap">
-        <iframe class="frame" src="https://preview.p5js.org/Tamillis/embed/Os9tzE3r-" width="768" height="576"
-          scrolling="no"></iframe>
-      </div>
+      
+      <button type="button" class="btn" id="randomly-coloring-tiles-btn" onclick="toggleIframe('randomly-coloring-tiles', 'https://preview.p5js.org/Tamillis/embed/Os9tzE3r-')">Open</button>
+      <div class="wrap" id="randomly-coloring-tiles"></div>
 
       <h2 class="subtitle">Smokey Wanderer</h2>
       <p class="main-text">This was another of the first forays into JavaScript, this time primarily to familiarise myself with array functions and make something pretty. Click to pause.</p>
-      <div class="wrap">
-        <iframe src="https://preview.p5js.org/Tamillis/embed/EJ8E8twVF" class="frame"  width="400" height="400"
-        scrolling="no"></iframe>
-      </div>
+      <button type="button" class="btn" id="smokey-wanderer-btn" onclick="toggleIframe('smokey-wanderer', 'https://preview.p5js.org/Tamillis/embed/EJ8E8twVF')">Open</button>
+      <div class="wrap" id="smokey-wanderer"></div>
 
       <h2 class="subtitle">Boids</h2>
       <p class="main-text">Following along with Daniel Schiffman's videos I decided to implement the flocking algorithm, setting this up. It also makes use of DOM elements generated from inside the script that dynamically effect the simulation. Also they flee the mouse, which I thought was cute.</p>
-      <div class="wrap">
-        <iframe src="https://preview.p5js.org/Tamillis/embed/_zCa9LADT" class="frame"  width="400" height="500"
-        scrolling="no"></iframe>
-      </div>
+      <button type="button" class="btn" id="boids-btn" onclick="toggleIframe('boids', 'https://preview.p5js.org/Tamillis/embed/_zCa9LADT')">Open</button>
+      <div class="wrap" id="boids"></div>
 
       <h2 class="subtitle">Continent Generator</h2>
       <p class="main-text">One of these days I will get around to a full world generating program or, perhaps, some kind of zero player simulator of agents on a tiled world. For now, I busied myself with this generator that randomly creates continents using voronoi cells with a randomised distance function. Left and right arrow keys allow scrolling, to show that it is left-right wrappable. Click to generate a new set.</p>
-      <div class="wrap">
-        <iframe src="https://preview.p5js.org/Tamillis/embed/6j5IixBqc" class="frame"  width="400" height="400"
-        scrolling="no"></iframe>
-      </div>
+      <button type="button" class="btn" id="continent-generator-btn" onclick="toggleIframe('continent-generator', 'https://preview.p5js.org/Tamillis/embed/6j5IixBqc')">Open</button>
+      <div class="wrap" id="continent-generator"></div>
 
       <h2 class="subtitle">Conways Life</h2>
       <p class="main-text">I love Conway's Life, so it was only a matter of time before I made it in P5JS. Here is that implementation. It also allows users to draw in new cells. P for pause and N for new set.</p>
-      <div class="wrap">
-        <iframe src="https://preview.p5js.org/Tamillis/embed/_f0BjwSbT" class="frame"  width="400" height="400"
-        scrolling="no"></iframe>
-      </div>
+      <button type="button" class="btn" id="conways-life-btn" onclick="toggleIframe('conways-life', 'https://preview.p5js.org/Tamillis/embed/_f0BjwSbT')">Open</button>
+      <div class="wrap" id="conways-life"></div>
 
       <h2 class="subtitle">No Overlap</h2>
       <p class="main-text">This particular sketch started as an attempt to explain recursion to a friend, and eventually into a packing algorithm challenge to myself, could I make one in less than the hour that I had before heading to work?<br>
       Of course not, but I did get the bulk of it done, and I polished it up to the state seen within the same day. Keep clicking and the balls will get smaller. It's probably my only properly commented program, haha.</p>
-      <div class="wrap">
-        <iframe src="https://preview.p5js.org/Tamillis/embed/jE5l0FIlz" class="frame"  width="400" height="400"
-        scrolling="no"></iframe>
-      </div>
+      <button type="button" class="btn" id="no-overlap-btn" onclick="toggleIframe('no-overlap', 'https://preview.p5js.org/Tamillis/embed/jE5l0FIlz')">Open</button>
+      <div class="wrap" id="no-overlap"></div>
 
     </section>
 
@@ -112,8 +102,6 @@
     </footer>
 
     <script src="sidebarBtn.js"></script>
-
-    <script src="sketch.js"></script>
   </body>
 </div>
 
