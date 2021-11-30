@@ -81,7 +81,7 @@ const terminalScript = t => {
     cycling infinitely
     */
 
-    let cutoff = 5;
+    let cutoff = 6;
 
     //check if the current scriptIndex is above the cutoff
     if (scriptIndex >= cutoff) {
