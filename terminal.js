@@ -24,6 +24,10 @@ const terminalScript = t => {
   //and the current index of that script
   var scriptIndex = 0;
 
+  //the cut off for which lines are part of the start sequence and 
+  //the later lines which should be displayed at random
+  let cutoff = 6;
+
   //the current line of the script
   var curLine = "Default text";
 
@@ -80,8 +84,6 @@ const terminalScript = t => {
     After those X lines the following lines are displayed at random,
     cycling infinitely
     */
-
-    let cutoff = 6;
 
     //check if the current scriptIndex is above the cutoff
     if (scriptIndex >= cutoff) {
