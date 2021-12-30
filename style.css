@@ -85,7 +85,8 @@ html, body {
 .nav-btn {
   z-index: 2;
 
-  position: absolute;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
   top: 0px;
   left: 0px;
 
@@ -96,9 +97,21 @@ html, body {
   height: 1.5em;
   width: 1.5em;
   font-size: 1.5rem;
+  border-radius: 0px 0px 15px 0px;
 
   color: var(--text-color);
   background-color: var(--highlight);
+}
+
+@media screen and (min-width: 800px) {
+  /* Its a small thing but I really do think having a finger size button
+  and a mouse pointer sized button is worth it */
+  .nav-btn {
+    height: 1.5em;
+    width: 1.5em;
+    font-size: 1rem;
+    border-radius: 0px 0px 10px 0px;
+  }
 }
 
 .btn {
@@ -140,6 +153,12 @@ html, body {
   border: none;
 }
 
+.rule {
+  border: none;
+  border-bottom: var(--highlight) 4px groove;
+  margin-bottom: 5px;
+}
+
 #terminal-section {
   border: none;
 }
@@ -167,12 +186,19 @@ html, body {
   text-indent: 6em;
   font-size: min(2vw, 1.1em);
 }
-
+  /*  Mobile first design! */
 .profile-pic {
-  width: min(80vw, 300px);
-  height: min(80vw, 300px);
+  width: 70vw;
+  height: 70vw;
   border-radius: 50%;
   border: 2px var(--highlight) groove;
+}
+
+@media screen and (min-width: 600px) {
+  .profile-pic {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .profile-pic-container {
@@ -231,6 +257,22 @@ html, body {
   background-repeat: no-repeat;
 }
 
+.search-bar {
+  width: auto;
+  height: 2rem;
+
+  text-indent: 0.5rem;
+  margin: 5px auto;
+
+  background-color: var(--backgroundAlt);
+  color: var(--text-color);
+  border: none;
+}
+
+.search-bar:focus {
+  outline: var(--highlight) 4px groove;
+}
+
 .main-footer {
   background-color: rgba(0, 0, 0, 0.1);
   text-indent: 2em;
@@ -250,12 +292,19 @@ html, body {
   display: none;
 
   /* These values are brute forced to be the minimum without invoking sidebars from P5JS:s latest style */
-  width: 404px;
-  height: 446px;
+  width: 80vw;
+  height: 85vw;
   padding: 0;
   overflow: none;
   scrollbar-width: 0;
   margin: 1em auto;
+}
+
+@media screen and (min-width: 600px) {
+  .wrap {
+    width: 404px;
+    height: 446px;
+  }
 }
 
 /* Sets the frame element to be 100% of the wrapping div */

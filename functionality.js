@@ -6,13 +6,19 @@ function toggleNav() {
   //if the display of the sidebar is nill or none move items sidebar amount to the side
   //and set the display to block, or do the reverse
   if (sidebarDisplay == "" || sidebarDisplay == "none") {
-    document.getElementsByClassName("section")[0].style.marginLeft = "calc(var(--sidebarWidth) + var(--sectionMargin))";
-    document.getElementsByClassName("nav-btn")[0].style.marginLeft = "var(--sidebarWidth)";
-    document.getElementById("footer").style.marginLeft = "var(--sidebarWidth)";
 
+    //media query to ensure shifting only happens on larger screens
+    if (!window.matchMedia("(max-width: 600px)").matches) {
+      document.getElementsByClassName("section")[0].style.marginLeft = "calc(var(--sidebarWidth) + var(--sectionMargin))";
+      document.getElementById("footer").style.marginLeft = "var(--sidebarWidth)";
+    }
+    document.getElementsByClassName("nav-btn")[0].style.marginLeft = "var(--sidebarWidth)";
     document.getElementsByClassName("sidebar")[0].style.display = "block";
   }
   else {
+    //to cover against fuckery
+    //all noted elements get reset  when the sidebar is cleared even if
+    //they were never changed in the first place. Reset bias!
     document.getElementsByClassName("section")[0].style.marginLeft = "var(--sectionMargin)";
     document.getElementsByClassName("nav-btn")[0].style.marginLeft = "0px";
     document.getElementById("footer").style.marginLeft = "0px";
@@ -27,8 +33,8 @@ function toggleIframe(divId, iframeSrc) {
   const container = document.getElementById(divId);
   if (container.firstElementChild) {
     destroyIframe(divId);
-    closeDiv(divId); 
-  }else{
+    closeDiv(divId);
+  } else {
     openDiv(divId);
     createIframeInDiv(divId, iframeSrc);
   }
@@ -64,7 +70,7 @@ function createIframeInDiv(divId, iframeSrc) {
 
 function destroyIframe(divId) {
   const div = document.getElementById(divId);
-  while(div.firstChild) {
+  while (div.firstChild) {
     div.removeChild(div.firstChild);
   }
 }
