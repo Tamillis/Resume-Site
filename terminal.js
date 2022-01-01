@@ -19,7 +19,7 @@ const terminalScript = t => {
     font: "IBMPlexMono-Regular"
   }
 
-  //the script as a line by line array, as loaded in line by line
+  //the script is a line by line string array, as loaded in line by line
   var script;
   //and the current index of that script
   var scriptIndex = 0;
@@ -57,7 +57,7 @@ const terminalScript = t => {
     t.fill(t.color(text.color));
 
     //set initial script line to first line in file
-    curLine = script[script.length - 1];
+    curLine = script[0];
   }
 
   t.draw = function () {

@@ -24,6 +24,10 @@ html, body {
   height: min(auto, 80vh);
 }
 
+.align-right {
+  text-align: right;
+}
+
 .no-bg {
   background-color: rgba(0,0,0,0);
 }
@@ -135,12 +139,6 @@ html, body {
   border-radius: 25px 0px 25px 0px;
 }
 
-.parent {
-  /* I don't really know what this is doing but it makes things stay inside their spacing??? */
-  display: grid;
-  grid-template-rows: max(85vh, 100%) auto;
-}
-
 .section {
   width: auto;
   margin: 5px var(--sectionMargin);
@@ -157,6 +155,8 @@ html, body {
   border: none;
   border-bottom: var(--highlight) 4px groove;
   margin-bottom: 5px;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 #terminal-section {
@@ -250,7 +250,8 @@ html, body {
 .bg-img-pineforest {
   background: none;
   background-image: url("assets/pine-forest-bg.jpg");
-  
+  alt: "A misty pine forest seen across a lake.";
+    
   height: 100%;
   background-size: 100vw;
   background-position: 0px -20vh;
@@ -275,9 +276,14 @@ html, body {
 
 .main-footer {
   background-color: rgba(0, 0, 0, 0.1);
-  text-indent: 2em;
+  margin: 1rem;
   transition: 0.5s;
   padding: 5px 2em;
+}
+
+#demo-div {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .footer-text {
