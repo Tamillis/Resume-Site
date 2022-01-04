@@ -11,7 +11,7 @@ function toggleNav() {
     if (!window.matchMedia("(max-width: 600px)").matches) {
       document.getElementsByClassName("section")[0].style.marginLeft = "calc(var(--sidebarWidth) + var(--sectionMargin))";
       document.getElementById("footer").style.marginLeft = "var(--sidebarWidth)";
-      myTerminal.windowResized();
+      
     }
     document.getElementsByClassName("nav-btn")[0].style.marginLeft = "var(--sidebarWidth)";
     document.getElementsByClassName("sidebar")[0].style.display = "block";
@@ -21,12 +21,11 @@ function toggleNav() {
     //to cover against fuckery
     //all noted elements get reset  when the sidebar is cleared even if
     //they were never changed in the first place. Reset bias!
+    document.getElementsByClassName("sidebar")[0].style.display = "none";
     document.getElementsByClassName("section")[0].style.marginLeft = "var(--sectionMargin)";
+    document.getElementsByClassName("section")[0].style.marginRight = "var(--sectionMargin)";
     document.getElementsByClassName("nav-btn")[0].style.marginLeft = "0px";
     document.getElementById("footer").style.marginLeft = "0px";
-
-    document.getElementsByClassName("sidebar")[0].style.display = "none";
-    myTerminal.windowResized();
   }
 }
 
