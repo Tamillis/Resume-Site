@@ -1,7 +1,7 @@
 Hi, my name is Peter Bellaby, and this is my website, resume and personal portfolio. 
 It's here to display my various projects, passions and business information. 
-These primarily include programming, languages and tabletop RPG's. 
 Each page demonstrates particular skills, noted by the icons in the footer.  
+This landing page demo's P5JS, for example, with these sketches showing string manipulation and a fractal snowflake storm. 
 Feel free to inspect this HTML or check out the github repository to see how I put this site together. 
 ***Loading further witticisms*** 
 Roses are red, violets are blue, mental that one, I'm telling you. 
@@ -19,4 +19,5 @@ Oh would some power give us the gift, to see ourselves as others see us.
 What is true is already so. Owning up to it doesn't make it worse. Not being open about it doesn't make it go away. 
 People say nothing is impossible, but I do nothing everyday. 
 Well, hello there! 
-Works on Chromium, Firefox, Operea and even Edge! (who uses that again?) 
+Works on Chromium, Firefox, Opera and even Edge! (who uses that again?) 
+Legend says the fairies and elves of Wales used the Corgi as steeds for fey warriors. 

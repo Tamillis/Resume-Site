@@ -26,7 +26,7 @@ const terminalScript = t => {
 
   //the cut off for which lines are part of the start sequence and 
   //the later lines which should be displayed at random
-  let cutoff = 6;
+  let cutoff = 5;
 
   //the current line of the script
   var curLine = "Default text";
@@ -86,15 +86,25 @@ const terminalScript = t => {
     */
 
     //check if the current scriptIndex is above the cutoff
-    if (scriptIndex >= cutoff) {
-      //assign it a random index up to the script array length
-      scriptIndex = t.floor(t.random(cutoff, script.length));
-    }
+    //and assign it a new index
+    if (scriptIndex >= cutoff) scriptIndex = getNewIndex(scriptIndex);
     //otherwise increment
     else scriptIndex++;
 
     //and set the curLine to the line at the new index
     curLine = script[scriptIndex];
+  }
+
+  function getNewIndex(currIndex) {
+    //assign a random index up to the script array length
+    
+    let newIndex = t.floor(t.random(cutoff, script.length));
+
+    //unless that index is the previous one, recall the function
+    if(newIndex == currIndex) {
+      getNewIndex(currIndex);
+    }
+    return newIndex;
   }
 
   function getTextContent() {
@@ -107,6 +117,7 @@ const terminalScript = t => {
     //and the current message length isnt longer than the current message line
     if (t.frameCount % framesPerUpdate == 0 && curMsgLen < curLine.length) curMsgLen++;
     else if (blinks > blinksPerCycle) {
+      //reset curMsgLen and blinks
       curMsgLen = 0;
       blinks = 0;
       //update script index

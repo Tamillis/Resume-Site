@@ -142,9 +142,19 @@ html, body {
 .section {
   width: auto;
   margin: 5px var(--sectionMargin);
+  
   padding: 1em;
   transition: 0.5s;
   border: var(--highlight) 4px groove;
+}
+
+/* old style HD pixel width I think makes for nice reading */
+@media screen and (min-width: 1280px) {
+  .section {
+    /* the view width -10vw to give the starting 5vw margin either side */
+    width: 1152px;
+    margin: 5px auto;
+  }
 }
 
 .no-border {

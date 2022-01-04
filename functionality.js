@@ -11,9 +11,11 @@ function toggleNav() {
     if (!window.matchMedia("(max-width: 600px)").matches) {
       document.getElementsByClassName("section")[0].style.marginLeft = "calc(var(--sidebarWidth) + var(--sectionMargin))";
       document.getElementById("footer").style.marginLeft = "var(--sidebarWidth)";
+      myTerminal.windowResized();
     }
     document.getElementsByClassName("nav-btn")[0].style.marginLeft = "var(--sidebarWidth)";
     document.getElementsByClassName("sidebar")[0].style.display = "block";
+    
   }
   else {
     //to cover against fuckery
@@ -24,6 +26,7 @@ function toggleNav() {
     document.getElementById("footer").style.marginLeft = "0px";
 
     document.getElementsByClassName("sidebar")[0].style.display = "none";
+    myTerminal.windowResized();
   }
 }
 
