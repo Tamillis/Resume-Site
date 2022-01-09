@@ -22,6 +22,9 @@ function toggleNav() {
     //all noted elements get reset  when the sidebar is cleared even if
     //they were never changed in the first place. Reset bias!
     document.getElementsByClassName("sidebar")[0].style.display = "none";
+
+    //although saying that we now have greater-than-tablet size as well, in which case the margin needs to be greater than sectionMargin but actually
+    //the margin needs to be auto'd in order to centrally align the Section
     document.getElementsByClassName("section")[0].style.marginLeft = "var(--sectionMargin)";
     document.getElementsByClassName("section")[0].style.marginRight = "var(--sectionMargin)";
     document.getElementsByClassName("nav-btn")[0].style.marginLeft = "0px";
