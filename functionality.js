@@ -1,5 +1,7 @@
 //toggles the sidebar from appearing or disappearing, 
 //also moving the underlying elements out of the way
+//yes I'm aware I should use getElementByID but I was very new to DOM manipulation at the time and I'll fix it,
+//it's just a low priority for now
 function toggleNav() {
   let sidebarDisplay = document.getElementById("sidebar").style.display;
 
@@ -10,8 +12,8 @@ function toggleNav() {
     //media query to ensure shifting only happens on larger screens
     if (!window.matchMedia("(max-width: 600px)").matches) {
       document.getElementsByClassName("section")[0].style.marginLeft = "calc(var(--sidebarWidth) + var(--sectionMargin))";
-      document.getElementById("footer").style.marginLeft = "var(--sidebarWidth)";
-      
+      document.getElementById("footer").style.margin = "1rem  1rem 1rem calc(var(--sidebarWidth) + 1rem)";
+
     }
     document.getElementsByClassName("nav-btn")[0].style.marginLeft = "var(--sidebarWidth)";
     document.getElementsByClassName("sidebar")[0].style.display = "block";
@@ -22,13 +24,21 @@ function toggleNav() {
     //all noted elements get reset  when the sidebar is cleared even if
     //they were never changed in the first place. Reset bias!
     document.getElementsByClassName("sidebar")[0].style.display = "none";
+    document.getElementsByClassName("nav-btn")[0].style.marginLeft = "0px";
+    document.getElementById("footer").style.margin = "1rem";
 
     //although saying that we now have greater-than-tablet size as well, in which case the margin needs to be greater than sectionMargin but actually
     //the margin needs to be auto'd in order to centrally align the Section
-    document.getElementsByClassName("section")[0].style.marginLeft = "var(--sectionMargin)";
-    document.getElementsByClassName("section")[0].style.marginRight = "var(--sectionMargin)";
-    document.getElementsByClassName("nav-btn")[0].style.marginLeft = "0px";
-    document.getElementById("footer").style.marginLeft = "0px";
+    if (window.matchMedia("(min-width: 1280px)").matches) {
+      document.getElementsByClassName("section")[0].style.margin = "5px auto";
+      document.getElementsByClassName("section")[0].style.marginRight = "var(--sectionMargin)";
+      
+    }
+    //else reset
+    else {
+      document.getElementsByClassName("section")[0].style.marginLeft = "var(--sectionMargin)";
+      document.getElementsByClassName("section")[0].style.marginRight = "var(--sectionMargin)";
+    }
   }
 }
 
