@@ -10,10 +10,14 @@ function toggleNav() {
   if (sidebarDisplay == "" || sidebarDisplay == "none") {
 
     //media query to ensure shifting only happens on larger screens
-    if (!window.matchMedia("(max-width: 600px)").matches) {
-      document.getElementsByClassName("section")[0].style.marginLeft = "calc(var(--sidebarWidth) + var(--sectionMargin))";
+    if (window.matchMedia("(min-width: 600px)").matches) {
       document.getElementById("footer").style.margin = "1rem  1rem 1rem calc(var(--sidebarWidth) + 1rem)";
-
+      document.getElementsByClassName("section")[0].style.marginLeft = "calc(var(--sidebarWidth) + var(--sectionMargin))";
+      //if the screen is greater than 1280px + 145px (the sidebarWidth, hard coded because getting it to be dynamic is hard af rn), 
+      //where the section then becomes fixed width, the margin switches to auto so that needs to be adjusted for
+      if(window.matchMedia("(min-width: 1425px)").matches) {
+        document.getElementsByClassName("section")[0].style.margin = "5px auto";
+      }
     }
     document.getElementsByClassName("nav-btn")[0].style.marginLeft = "var(--sidebarWidth)";
     document.getElementsByClassName("sidebar")[0].style.display = "block";
@@ -31,7 +35,6 @@ function toggleNav() {
     //the margin needs to be auto'd in order to centrally align the Section
     if (window.matchMedia("(min-width: 1280px)").matches) {
       document.getElementsByClassName("section")[0].style.margin = "5px auto";
-      document.getElementsByClassName("section")[0].style.marginRight = "var(--sectionMargin)";
       
     }
     //else reset
