@@ -12,7 +12,6 @@
 
   <link rel="stylesheet" type="text/css" href="style.css">
 
-  <script src="libraries/p5.min.js"></script>
   <!-- React with JSX -->
   <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
@@ -119,15 +118,27 @@
     <script type="text/babel">
       //type react application here
 
-      const App = () => {
+      const PointBuyCalculatorApp = () => {
+        //app global variables so that closured Components can still effect and do calculations outside of their scope
+        const POINTMAX = 27;
+        const [currPointTotal, setPointTotal] = React.useState(POINTMAX);
+
         function Statbloc(props) {
-          function increase() {props.value++;}
-          function decrease() {props.value--;}
+          const [value, setValue] = React.useState(props.value);
+
+          const updateValue = (valueChange) => {
+            //check change doesnt violate max point cost
+            setPointTotal(Number(currPointTotal) + Number(valueChange));
+
+            //if OK use Hook to update value
+            setValue(Number(value) + Number(valueChange));
+          }
+
           return(
             <div>
-              <p>{props.type}: {props.value}</p>
-              <button type="numeric" onClick={increase}>+1</button>
-              <button type="numeric" onClick={decrease}>-1</button>
+              <p>{props.type}: {value}</p>
+              <button type="number" onClick={() => updateValue(1)}>+1</button>
+              <button type="number" onClick={() => updateValue(-1)}>-1</button>
             </div>
           )
         }
@@ -141,7 +152,7 @@
         return (<div>
           <h3>Point Buy Calculator</h3>
           <p>This calculator is built using React!</p>
-          <Points points="27"/>
+          <Points points={currPointTotal + " / " + POINTMAX}/>
           <Statbloc type="Strength" value="10" />
           <Statbloc type="Dexterity" value="10" />
           <Statbloc type="Constitution" value="10" />
@@ -152,7 +163,7 @@
         )
       }
 
-      ReactDOM.render(<App/>, document.getElementById("PBCalc"));
+      ReactDOM.render(<PointBuyCalculatorApp/>, document.getElementById("PBCalc"));
       
     </script>
 
