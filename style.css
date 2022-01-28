@@ -1,3 +1,5 @@
+/* This is the first style sheet I wrote and so its awful and unorganized and I'm sorry */
+
 :root {
   --text-color: #f1faee;
   --color: #008f11;
@@ -24,6 +26,8 @@ body {
   height: min(auto, 80vh);
 }
 
+/* Generic small classes for easy modification when writting the HTML */
+
 .align-right {
   text-align: right;
 }
@@ -48,6 +52,10 @@ body {
   text-decoration: underline;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .z1 {
   z-index: 1;
 }
@@ -58,15 +66,6 @@ body {
 
 .z3 {
   z-index: 3;
-}
-
-
-.z5 {
-  z-index: 5;
-}
-
-.z10 {
-  z-index: 10;
 }
 
 .z-1 {
@@ -80,6 +79,21 @@ body {
 .z-3 {
   z-index: -3;
 }
+
+.no-border {
+  border: none;
+}
+
+.inline {
+  display: inline !important;
+}
+
+.square-20px {
+  width: 2em;
+  height: 2em;
+}
+
+/* CSS for the sidebar, which was built up from a borrowed "navigation bar" example, hence the "nav" naming */
 
 .sidebar {
   position: fixed;
@@ -141,8 +155,8 @@ body {
 }
 
 @media screen and (min-width: 800px) {
-  /* Its a small thing but I really do think having a finger size button
-  and a mouse pointer sized button is worth it */
+  /* Its a small thing but I really do think having a finger size button on small screens
+  and a mouse pointer sized button on larger screens is worth it */
   .nav-btn {
     height: 1.5em;
     width: 1.5em;
@@ -151,6 +165,7 @@ body {
   }
 }
 
+/* General styling classes, for a site-wide aesthetic */
 .btn {
   text-align: center;
   text-decoration: none;
@@ -162,14 +177,6 @@ body {
   margin: 0px auto;
 
   border: solid 2px var(--highlight);
-}
-
-#p5js-canvas canvas {
-  display: block;
-  width: auto;
-  margin: 2em auto;
-  border: 4px var(--highlight) groove;
-  border-radius: 25px 0px 25px 0px;
 }
 
 .section {
@@ -190,10 +197,6 @@ body {
   }
 }
 
-.no-border {
-  border: none;
-}
-
 .rule {
   border: none;
   border-bottom: var(--highlight) 4px groove;
@@ -202,50 +205,23 @@ body {
   margin-right: 1rem;
 }
 
-#terminal-section {
-  border: none;
-}
-
 .main-title {
   text-decoration: underline;
-  font-size: min(6vw, 4em);
+  font-size: max(5vw, 2em);
   text-align: center;
   padding-bottom: 15px;
 }
 
 .subtitle {
   text-decoration: underline;
-  font-size: min(4vw, 2em);
+  font-size: max(2.5vw, 1.5em);
   text-indent: 2em;
   padding-bottom: 5px;
 }
 
 .subtitle-synopsis {
   text-indent: 6em;
-  font-size: min(2vw, 1.1em);
-}
-  /*  Mobile first design! */
-.profile-pic {
-  width: 70vw;
-  height: 70vw;
-  border-radius: 50%;
-  border: 2px var(--highlight) groove;
-}
-
-@media screen and (min-width: 600px) {
-  .profile-pic {
-    width: 300px;
-    height: 300px;
-  }
-}
-
-.profile-pic-container {
-  display: flex;
-  justify-content: center;
-}
-
-.intro-text p {
-  font-style: italic;
+  font-size: max(2vw, 1em);
 }
 
 .main-text {
@@ -276,6 +252,93 @@ body {
   font-style: inherit;
   font-weight: bold;
 }
+
+/* Index / Landing page unique CSS */
+
+#terminal-section {
+  border: none;
+}
+
+#p5js-canvas canvas {
+  display: block;
+  width: auto;
+  margin: 2em auto;
+  border: 4px var(--highlight) groove;
+  border-radius: 25px 0px 25px 0px;
+}
+
+/*  About page unique CSS */
+.profile-pic {
+  width: 70vw;
+  height: 70vw;
+  border-radius: 50%;
+  border: 2px var(--highlight) groove;
+}
+
+@media screen and (min-width: 600px) {
+  .profile-pic {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.profile-pic-container {
+  display: flex;
+  justify-content: center;
+}
+
+.intro-text p {
+  font-style: italic;
+}
+
+#globe-canvas {
+
+  position: fixed;
+  display: inline;
+  
+  width: 33vw;
+  height: 33vw;
+  top: 0px;
+  right: 0px;
+
+  padding: 0px 2px;
+  margin: 0px;
+  border: none;
+
+}
+
+/* Programming page unique CSS */
+/* Kindly borrowed from stackoverflow for getting CSS to fit an iframe neatly */
+
+.wrap {
+/* set display to none initially for site speed */
+  display: none;
+
+  /* These values are brute forced to be the minimum without invoking sidebars from P5JS:s latest style */
+  width: 80vw;
+  height: 85vw;
+  padding: 0;
+  overflow: none;
+  scrollbar-width: 0;
+  margin: 1em auto;
+}
+
+@media screen and (min-width: 600px) {
+  .wrap {
+    width: 404px;
+    height: 446px;
+  }
+}
+
+/* Sets the frame element to be 100% of the wrapping div */
+.frame {
+  width : 100%;
+  height : 100%;
+  overflow: none;
+}
+
+/* TODO fix up styling for Materium Existantiae page */
+/* Materium Existentiae unique CSS */
 
 .background-image {
   z-index: -1;
@@ -312,6 +375,8 @@ body {
   outline: var(--highlight) 4px groove;
 }
 
+/* Generic Footer classes */
+
 .main-footer {
   background-color: rgba(0, 0, 0, 0.1);
   margin: 1rem;
@@ -319,25 +384,14 @@ body {
   padding: 5px 2em;
 }
 
+.footer-text {
+  font-size: .87em;
+  opacity: 0.8;
+}
+
 #demo-div {
   display: inline-block;
   vertical-align: middle;
-}
-
-#globe-canvas {
-
-  position: fixed;
-  display: inline;
-  
-  width: 33vw;
-  height: 33vw;
-  top: 0px;
-  right: 0px;
-
-  padding: 0px 2px;
-  margin: 0px;
-  border: none;
-
 }
 
 /* React App classes */
@@ -346,53 +400,24 @@ body {
   border: groove 4px var(--color);
 }
 
-.footer-text {
-  font-size: .87em;
-  opacity: 0.8;
+.statbloc-container {
+  display: block;
+
+  width: auto;
+  height: 2em;
+  padding: 0px;
 }
 
-/* Kindly borrowed from stackoverflow for getting CSS to fit an iframe neatly */
+.statbloc-items {
+  padding: 0px;
 
-.wrap {
-/* set display to none initially for site speed */
-  display: none;
-
-  /* These values are brute forced to be the minimum without invoking sidebars from P5JS:s latest style */
-  width: 80vw;
-  height: 85vw;
-  padding: 0;
-  overflow: none;
-  scrollbar-width: 0;
-  margin: 1em auto;
-}
-
-@media screen and (min-width: 600px) {
-  .wrap {
-    width: 404px;
-    height: 446px;
-  }
-}
-
-/* Sets the frame element to be 100% of the wrapping div */
-.frame {
-  width : 100%;
-  height : 100%;
-  overflow: none;
-}
-
-.testForm {
   display: inline-block;
-  text-align: right;
-  width: max(30%, 200px);
-  margin: 5px auto 5px 5px;
-  border: 2px red solid;
-  outline: 2px blue solid;
+
+  flex: initial none none;
 }
 
-.submitButton {
-  display: inline;
-  border: 2px red solid;
-  margin: auto 5px;
-  width: 50px;
-  height: 50px;
+.statbloc-label {
+  width: max(9rem, 25%);
+  text-align: right;
+  margin: 5px;
 }

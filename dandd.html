@@ -48,8 +48,8 @@
   <section class="section">
     <!-- Taken from the Joplin document, manually for now -->
     <!-- One day I'll automate that process, cause it should be relatively easy -->
-    <h1>Dungeons & Dragons At My Table</h1>
-    <h2>Introduction</h2>
+    <h1 class="main-title">Dungeons & Dragons At My Table</h1>
+    <h2 class="subtitle">Introduction</h2>
     <div class="quote">“Make your choices wisely, apprentice, for you will find they come to define you.”</div>
     <div class="quote-source">– Unknown</div>
 
@@ -174,10 +174,10 @@
 
         function Statbloc(props) {
           return (
-            <div>
-              <p>{props.attribute}: {props.value}</p>
-              <button type="number" onClick={() => props.onClick(props.attribute, 1)}>+1</button>
-              <button type="number" onClick={() => props.onClick(props.attribute, -1)}>-1</button>
+            <div className="statbloc-container">
+              <p className="statbloc-items statbloc-label">{props.attribute}: {props.value}</p>
+              <button className="square-20px statbloc-items btn inline-subtitle" type="number" onClick={() => props.onClick(props.attribute, 1)}>+</button>
+              <button className="square-20px statbloc-items btn inline-subtitle" type="number" onClick={() => props.onClick(props.attribute, -1)}>-</button>
             </div>
           )
         }
@@ -190,9 +190,9 @@
         }
 
         return (<div className="app-body">
-          <h3 className="main-title">Point Buy Calculator</h3>
-          <p>This calculator is built using React!</p>
-          <p>{currPointTotal + " / " + POINTMAX}</p>
+          <h3 className="subtitle">Point Buy Calculator</h3>
+          <p className="main-text subtitle-synopsis italic">This calculator is built using React!</p>
+          <p className="main-text inline-subtitle underline">{"Points: " + currPointTotal + " / " + POINTMAX}</p>
           {stats}
         </div>
         )
