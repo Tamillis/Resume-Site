@@ -340,6 +340,12 @@ body {
 
 }
 
+/* React App classes */
+.app-body {
+  background-color: rgba(0, 0.1, 0, 0.3);
+  border: groove 4px var(--color);
+}
+
 .footer-text {
   font-size: .87em;
   opacity: 0.8;
