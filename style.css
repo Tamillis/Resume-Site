@@ -6,8 +6,7 @@
   --background: #2a312d;
   --backgroundAlt: #111;
   --highlight: #00d435;
-  --contrastLight: #f4a261;
-  --contrastDark: #e76f51;
+  --contrastColor: #007e8f;
   --sidebarWidth: 145px;
   --sectionMargin: 5vw;
 }
@@ -89,8 +88,8 @@ body {
 }
 
 .square-20px {
-  width: 2em;
-  height: 2em;
+  width: 20px;
+  height: 20px;
 }
 
 /* CSS for the sidebar, which was built up from a borrowed "navigation bar" example, hence the "nav" naming */
@@ -177,6 +176,8 @@ body {
   margin: 0px auto;
 
   border: solid 2px var(--highlight);
+
+  cursor: pointer;
 }
 
 .section {
@@ -200,7 +201,8 @@ body {
 .rule {
   border: none;
   border-bottom: var(--highlight) 4px groove;
-  margin-bottom: 5px;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -215,12 +217,12 @@ body {
 .subtitle {
   text-decoration: underline;
   font-size: max(2.5vw, 1.5em);
-  text-indent: 2em;
+  text-indent: 1.5em;
   padding-bottom: 5px;
 }
 
 .subtitle-synopsis {
-  text-indent: 6em;
+  text-indent: 3em;
   font-size: max(2vw, 1em);
 }
 
@@ -251,6 +253,28 @@ body {
   text-decoration: underline;
   font-style: inherit;
   font-weight: bold;
+}
+
+.table {
+  border: 2px var(--color) groove;
+
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.table td, .table th {
+  border-right: 2px var(--color) groove;
+  padding: 2px 5px;
+}
+
+.table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.table th {
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /* Index / Landing page unique CSS */
@@ -396,8 +420,11 @@ body {
 
 /* React App classes */
 .app-body {
-  background-color: rgba(0, 0.1, 0, 0.3);
-  border: groove 4px var(--color);
+  background-color: #2a2e31;
+  border: groove 4px var(--contrastColor);
+
+  margin: 5px;
+  padding: 1em;
 }
 
 .statbloc-container {
@@ -420,4 +447,45 @@ body {
   width: max(9rem, 25%);
   text-align: right;
   margin: 5px;
+}
+
+.statbloc-btn {
+  font-size: 1.5rem;
+  background-color: var(--contrastColor);
+
+  border: 1px black solid;
+
+  width: 2rem;
+  height: 2rem;
+}
+
+.statbloc-btn:active {
+  border: 2px inset var(--contrastColor);
+  transform: translateY(2px);
+}
+
+.app-main {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  align-items: stretch;
+  
+  padding: 5px;
+}
+
+.calculator-body {
+  flex-basis: max(16rem, 20vw);
+  /* border: 2px var(--color) groove; */
+  margin: 0px 1em;
+}
+
+.app-table {
+  flex-basis: max(16rem, 20vw);
+  margin: 5px 1em;
+  border-color: var(--contrastColor);
+}
+
+.app-table td, .app-table th {
+  border-color: var(--contrastColor);
 }
