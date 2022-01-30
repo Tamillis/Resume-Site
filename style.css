@@ -80,7 +80,7 @@ body {
 }
 
 .no-border {
-  border: none;
+  border: none !important;
 }
 
 .inline {
@@ -217,7 +217,7 @@ body {
 .subtitle {
   text-decoration: underline;
   font-size: max(2.5vw, 1.5em);
-  text-indent: 1.5em;
+  text-indent: 1.5rem;
   padding-bottom: 5px;
 }
 
@@ -225,12 +225,18 @@ body {
   text-indent: 3em;
   font-size: max(2vw, 1em);
 }
+.subsubtitle {
+  text-decoration: underline;
+  font-size: max(2vw, 1.25em);
+  text-indent: 1.5rem;
+  padding-bottom: 5px;
+}
 
 .main-text {
   display: block;
   padding: 0.5em 0em;
   font-size: 1em;
-  text-indent: 2em;
+  text-indent: 1.5rem;
   text-rendering: optimizeLegibility;
 }
 
@@ -241,18 +247,20 @@ body {
 .inline-subtitle {
   font-style: italic;
   font-weight: bold;
+  padding-top: 3px;
 }
 
 .intext-link, .intext-link:link, .intext-link:visited {
   text-decoration: none;
   color: var(--text-color);
   font-style: normal;
+  font-weight: bold;
 }
 
 .intext-link:hover {
   text-decoration: underline;
   font-style: inherit;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .table {
