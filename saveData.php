@@ -20,10 +20,10 @@
         <p class="subtitle">You submitted the data: </p>
         <p class="main-text no-indent">
             <?php
-                foreach($_POST as $key => $value) {
-                    echo "Key: " . $key . ", Value: " . $value;
-                    echo "<br>";
-                }
+            foreach ($_POST as $key => $value) {
+                echo "Key: " . $key . ", Value: " . $value;
+                echo "<br>";
+            }
 
             ?>
         </p>
@@ -34,30 +34,51 @@
 
 <!-- From here a pure PHP script for storing that data in a MySQL database using mysqli -->
 
-<?php 
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "testdb";
+$tablename = "test";
 
-//connection creation
-$conn = new mysqli($servername, $username, $password, $dbname);
+//check database exists by
+$sqlConn = new mysqli($servername, $username, $password);
 
 //check connection
-if($conn->connect_error) {
+if ($sqlConn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-//finally, insert data into a table in a database
-$values = "'" . $_POST["userName"] . "', " . $_POST["age"] . ", '" . $_POST["gender"] . "'";
-$sql = "INSERT INTO test (Name, Age, Gender) VALUES (" . $values . ")";
+$sqlConn->query("CREATE DATABASE IF NOT EXISTS " . $dbname);
+$sqlConn->close();
 
-if($conn->query($sql) === TRUE) {
-    $lastID = $conn->insert_id;
-    echo "New record ID" . $lastID . " created successfully";
-} else {
-    echo "Error: " . $conn->error;
+//create connection to database
+$dbConn = new mysqli($servername, $username, $password, $dbname);
+
+//check connection
+if ($dbConn->connect_error) {
+    die("Connection failed: " . $dbConn->connect_error);
 }
 
-$conn->close();
+//check if $tablename exists
+$sql = "CREATE TABLE IF NOT EXISTS $tablename (
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(30),
+        age VARCHAR(30),
+        gender VARCHAR(10))";
+
+$dbConn->query($sql);
+
+//finally, insert data into a table in a database
+$values = "'" . $_POST["userName"] . "', " . $_POST["age"] . ", '" . $_POST["gender"] . "'";
+$sql = "INSERT INTO " . $tablename . " (Name, Age, Gender) VALUES (" . $values . ")";
+
+if ($dbConn->query($sql) === TRUE) {
+    $lastID = $dbConn->insert_id;
+    echo "New record ID" . $lastID . " created successfully";
+} else {
+    echo "Error: " . $dbConn->error;
+}
+
+$dbConn->close();
 ?>
