@@ -3,7 +3,7 @@
 .testForm {
     display: inline-block;
     text-align: right;
-    width: max(30%, 200px);
+    width: max(30%, 250px);
     margin: 5px auto 5px 5px;
     border: 2px red solid;
   }

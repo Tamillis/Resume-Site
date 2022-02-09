@@ -83,6 +83,10 @@ body {
   border: none !important;
 }
 
+.no-indent {
+  text-indent: 0px !important;
+}
+
 .inline {
   display: inline !important;
 }
@@ -496,4 +500,38 @@ body {
 
 .app-table td, .app-table th {
   border-color: var(--contrastColor);
+}
+
+/* Marquee taken from stackoverflow */
+.wrapper {
+  max-width: 60%;
+
+  margin: 0px 20%;
+
+  overflow: hidden;
+
+  border-left: 2px groove var(--color);
+  border-right: 2px groove var(--color);
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: marquee 12s linear infinite;
+}
+
+.marquee p {
+  display: inline-block;
+  font-size: 1.25em;
+  font-style: italic;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-33.334%, 0, 0);
+  }
 }

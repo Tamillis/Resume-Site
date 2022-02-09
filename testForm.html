@@ -17,12 +17,12 @@
 
     <section class="section">
         <form action="saveData.php" method="POST" class="testForm">
-            <label for="inputUserName">Enter your name; </label>
-            <input type="text" id="inputUserName" name="userName"><br>
+            <label for="inputUserName">Your name; </label>
+            <input type="text" id="inputUserName" name="userName" placeholder="John" required><br>
             <label for="inputAge">Your age; </label>
-            <input type="number" name="age" id="inputAge" max="199" min="0"><br>
+            <input type="number" name="age" id="inputAge" max="199" min="0" placeholder="18" required><br>
             <label for="inputGenderM">M: </label>
-            <input type="radio" name="gender" id="inputGenderM" value="Male"><br>
+            <input type="radio" name="gender" id="inputGenderM" value="Male" checked><br>
             <label for="inputGenderF">F: </label>
             <input type="radio" name="gender" id="inputGenderF" value="Female"><br>
             <label for="inputGenderO">Other: </label>

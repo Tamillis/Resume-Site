@@ -1,4 +1,4 @@
-<!-- A file for saving test form data onto a database / in an accessible format such as an array of data in a JSON or w/e -->
+<!-- A webpage for showing test form data-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,10 +18,46 @@
 <body>
     <section class="section">
         <p class="subtitle">You submitted the data: </p>
-        <pre>
-            <?php var_dump($_POST); ?>
-        </pre>
+        <p class="main-text no-indent">
+            <?php
+                foreach($_POST as $key => $value) {
+                    echo "Key: " . $key . ", Value: " . $value;
+                    echo "<br>";
+                }
+
+            ?>
+        </p>
     </section>
 </body>
 
 </html>
+
+<!-- From here a pure PHP script for storing that data in a MySQL database using mysqli -->
+
+<?php 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "testdb";
+
+//connection creation
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+//check connection
+if($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+//finally, insert data into a table in a database
+$values = "'" . $_POST["userName"] . "', " . $_POST["age"] . ", '" . $_POST["gender"] . "'";
+$sql = "INSERT INTO test (Name, Age, Gender) VALUES (" . $values . ")";
+
+if($conn->query($sql) === TRUE) {
+    $lastID = $conn->insert_id;
+    echo "New record ID" . $lastID . " created successfully";
+} else {
+    echo "Error: " . $conn->error;
+}
+
+$conn->close();
+?>
