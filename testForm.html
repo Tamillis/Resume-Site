@@ -16,18 +16,18 @@
 
 
     <section class="section">
-        <form action="" target="_blank" class="testForm">
+        <form action="saveData.php" method="POST" class="testForm">
             <label for="inputUserName">Enter your name; </label>
             <input type="text" id="inputUserName" name="userName"><br>
             <label for="inputAge">Your age; </label>
             <input type="number" name="age" id="inputAge" max="199" min="0"><br>
             <label for="inputGenderM">M: </label>
-            <input type="radio" name="gender" id="inputGenderM"><br>
+            <input type="radio" name="gender" id="inputGenderM" value="Male"><br>
             <label for="inputGenderF">F: </label>
-            <input type="radio" name="gender" id="inputGenderF"><br>
+            <input type="radio" name="gender" id="inputGenderF" value="Female"><br>
             <label for="inputGenderO">Other: </label>
-            <input type="radio" name="gender" id="inputGenderO"><br>
-            <input type="submit" value="Submit Me" class="submitButton">
+            <input type="radio" name="gender" id="inputGenderO" value="Other"><br>
+            <input type="submit" value="Submit Me" class="btn submitButton">
         </form>
         
     </section>
