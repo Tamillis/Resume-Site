@@ -35,21 +35,13 @@ const terminalScript = t => {
     t.font = t.loadFont("assets/IBMPlexMono-Regular.ttf");
 
     //load the text into the file
-    //script = $.get("assets/messages.txt", setup(), "text");
-
-    /*
-    turns out p5js had a string load function, 
-    and I couldn't figure out how to force the program to wait for the HHTPGet to complete, 
-    calling setup() in the callback to "refresh" the program didnt do the trick 
-    */
     script = t.loadStrings("assets/messages.txt");
   }
 
   t.setup = function () {
     //set p5js canvas to desired canvas element
-    let w = t.min(t.windowWidth * 0.8, 800);
-    let h = t.max(t.windowHeight * 0.3, 300);
-    t.createCanvas(w, h); //.parent("p5js-canvas");
+    let [w, h] = t.getDims();
+    t.createCanvas(w, h);
 
     //set default text properties using global t obj, use push pop elsewhere if necessary
     t.textSize(text.size);
@@ -141,9 +133,15 @@ const terminalScript = t => {
   }
 
   t.windowResized = function () {
-    let w = t.min(t.windowWidth * 0.8, 800);
-    let h = t.max(t.windowHeight * 0.3, 300);
-    t.resizeCanvas(w, h);
+    let [newW, newH] = t.getDims();
+    t.resizeCanvas(newW, newH);
+  }
+
+  t.getDims = function () {
+    let container = document.getElementById("p5js-canvas");
+    let w = t.min(container.offsetWidth * 0.8, 800);
+    let h = t.max(container.offsetHeight * 0.3, 300);
+    return [w, h];
   }
 }
 

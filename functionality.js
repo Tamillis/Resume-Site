@@ -1,47 +1,26 @@
 //toggles the sidebar from appearing or disappearing, 
-//also moving the underlying elements out of the way
-//yes I'm aware I should use getElementByID but I was very new to DOM manipulation at the time and I'll fix it,
-//it's just a low priority for now
+//also moving the underlying elements, wrapped in a "not-sidebar" div, out of the way
 function toggleNav() {
   let sidebarDisplay = document.getElementById("sidebar").style.display;
 
   //if the display of the sidebar is nill or none move items sidebar amount to the side
   //and set the display to block, or do the reverse
   if (sidebarDisplay == "" || sidebarDisplay == "none") {
-
     //media query to ensure shifting only happens on larger screens
     if (window.matchMedia("(min-width: 600px)").matches) {
-      document.getElementById("footer").style.margin = "1rem  1rem 1rem calc(var(--sidebarWidth) + 1rem)";
-      document.getElementsByClassName("section")[0].style.marginLeft = "calc(var(--sidebarWidth) + var(--sectionMargin))";
-      //if the screen is greater than 1280px + 145px (the sidebarWidth, hard coded because getting it to be dynamic is hard af rn), 
-      //where the section then becomes fixed width, the margin switches to auto so that needs to be adjusted for
-      if(window.matchMedia("(min-width: 1425px)").matches) {
-        document.getElementsByClassName("section")[0].style.margin = "5px auto";
-      }
+      document.getElementById("not-sidebar").style.marginLeft = "var(--sidebarWidth)";
     }
-    document.getElementsByClassName("nav-btn")[0].style.marginLeft = "var(--sidebarWidth)";
-    document.getElementsByClassName("sidebar")[0].style.display = "block";
-    
+    document.getElementById("nav-btn").style.left = "var(--sidebarWidth)";
+    document.getElementById("sidebar").style.display = "block";
   }
   else {
     //to cover against fuckery
     //all noted elements get reset  when the sidebar is cleared even if
     //they were never changed in the first place. Reset bias!
-    document.getElementsByClassName("sidebar")[0].style.display = "none";
-    document.getElementsByClassName("nav-btn")[0].style.marginLeft = "0px";
-    document.getElementById("footer").style.margin = "1rem";
+    document.getElementById("nav-btn").style.left = "0px";
+    document.getElementById("sidebar").style.display = "none";
 
-    //although saying that we now have greater-than-tablet size as well, in which case the margin needs to be greater than sectionMargin but actually
-    //the margin needs to be auto'd in order to centrally align the Section
-    if (window.matchMedia("(min-width: 1280px)").matches) {
-      document.getElementsByClassName("section")[0].style.margin = "5px auto";
-      
-    }
-    //else reset
-    else {
-      document.getElementsByClassName("section")[0].style.marginLeft = "var(--sectionMargin)";
-      document.getElementsByClassName("section")[0].style.marginRight = "var(--sectionMargin)";
-    }
+    document.getElementById("not-sidebar").style.marginLeft = "0px";
   }
 }
 
