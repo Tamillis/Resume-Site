@@ -31,7 +31,7 @@
 
             <div class="intro-text main-text">
                 <p>
-                    [Updated 9th February 2022]
+                    [Updated 13th February 2022]
                 </p>
                 <p>
                     Hi, my name is Peter Bellaby, as you might have already seen on the landing page's mock terminal: a career English teacher, a self-taught programmer and full stack web developer, a fluent speaker of English and Japanese and conversational in Swedish, a happily married man to a lovely wife, a world traveller (places I've been highlighted in red on the globe there) and a massive Dungeons and Dragons geek, primarily in the role as forever-DM (so please let me know if you need a player!) As you can probably see, I'm also a corgi owner and dog-person.</p>
@@ -53,6 +53,8 @@
             <p class="subtitle-synopsis">The official certificates and education that I possess.</p>
             <div class="main-text">
 
+                <p><span class="inline-subtitle">Full-stack Web Development</span>: where I taught myself using online tools and practice over the course of half a year, building on a foundation of hobbyist interest in programming spanning the last 10 years.</p>
+
                 <p>An <span class="inline-subtitle">OCR Level 3 Diploma in Business Administration</span> during a commercial business apprenticeship with ZF Friedrichshafen AG, educated by Solihull College, where I developed a wide base of business skills alongside practical experience managing accounts of cart part manufacturing and supply for various big-names; Jaguar Landrover, Honda, Toyota and others. (Oct 2017 – Oct 2018)</p>
 
                 <p>A <span class="inline-subtitle">Trinity College London TESOL</span> certificate for teaching English as a foreign language, received from Universal Language Training, a 6 month course condensed into the busiest 1 month of my life. Well worth it, however, and it sparked my passion for teaching. (July 2015)</p>
@@ -70,19 +72,20 @@
             <p class="subtitle-synopsis">The skills and abilities I bring to a table that haven't been printed on a paper first.</p>
             <div class="main-text">
                 <p>
-                    <span class="inline-subtitle">Languages</span>: I speak Japanese fluently, Swedish conversationally and I'm working on French. I hold a JLPT N1 level equivilent level of Japanese, conversing at a native level, and a B1+ (CEFR) level in Swedish (though it's been a while, I'm confident I could get it back up there, if not B2, within a month's serious study), a growing understanding of French as well as a foundational understanding of Spanish and German.
+                    <span class="inline-subtitle">Programming, IT & Computer Skills</span>, where I am capable of coding in PHP, Javascript, HTML, CSS, MySQL, Java, Basic, Python, C#, as well as quickly picking up any other 3rd generation programming language. I can use these in combination to produce projects, working with GIT as part of a team, and produce websites and other applications from the ground up to deployment. <br>
+                    I've also learned the fundamentals of C++ to the point of being able to build command-line apps. I will be fluent in any spreadsheet and word processing and data-manipulation software you throw at me, at making use of Windows 7, 10 and now 11, with Linux (both Debian and Arch based distros) and any other expected computer literacy. I also build computers as a hobby, and know them literally inside and out. Putting Lubuntu on an old Windows Surface Pro was a fun project I underwent once.
                 </p>
 
                 <p>
-                    <span class="inline-subtitle">Programming, IT & Computer Skills</span>, where I am capable of coding in Java, Javascript, HTML, CSS, Basic, Python, C#, as well as quickly picking up any other 3rd generation programming language. I've learned the fundamentals of C++ to the point of building simple command-lind apps. I am or will be fluent in any spreadsheet and word processing and data-manipulation software you throw at me, at making use of Windows 7, 10 and now 11, with Linux (both Debian and Arch based distros) and any other expected computer literacy. I also build computers as a hobby, and know them literally inside and out. Putting Lubuntu on an old Windows Surface Pro was a fun project I underwent once.
+                    <span class="inline-subtitle">Languages</span>: I speak Japanese fluently, Swedish conversationally and I'm working on French. I hold a JLPT N1 level equivalent level of Japanese, conversing at a native level, and a B1+ (CEFR) level in Swedish, a growing understanding of French as well as a foundational understanding of Spanish and German.
                 </p>
 
                 <p>
-                    <span class="inline-subtitle">Team Worker</span>. No position is an island entire of itself. Proactive teamwork is key and I have always tried to be a good pillar. I have received excellent feedback during the summer English Language camps I have run; my positions as trainer, team leader and teacher; and in a variety of different fields from not just teaching, but team translation projects, event faires and as an Events Assistant during my hotel years. Not just working in teams, but building them up to get a job done too; I helped get Co&Co's TOEIC Exam Preparation English course off the ground.
+                    <span class="inline-subtitle">Team Worker</span>. No position is an island entire of itself. Proactive teamwork is key and I always try to be an exemplary pillar. I have received excellent feedback during the summer English Language camps I have run; my positions as trainer, team leader and teacher; and in a variety of different fields from not just teaching, but team translation projects, event fairs and as an Events Assistant during my hotel years. Not just working in teams, but building them up to get a job done too; I helped get Co&Co's TOEIC Exam Preparation English course off the ground.
                 </p>
 
                 <p>
-                    <span class="inline-subtitle">Project & Time Management</span>. As demonstrated while juggling a part time job with full-time intense University study and work-loads, and organising classes and schedules for my students, I know what to do, how to do it, and most importantly how long things take. I am also not afraid to be upfront if I expect items are not possible within a certain schedule, and I always priorities the completion of the project at hand to a level required by the specification, within dead-lines.
+                    <span class="inline-subtitle">Project & Time Management</span>. As demonstrated while juggling a part time job with full-time intense University study and work-loads, and organising classes and schedules for my students, I know what to do, how to do it, and most importantly how long things take. I am also not afraid to be upfront if I expect items are not possible within a certain schedule, and I always prioritise the completion of the project at hand to the level required by the specification, within dead-lines.
                 </p>
 
                 <p>
