@@ -2,18 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="portfolio, resume, curriculum vitae, Peter, Bellaby, Peter Bellaby">
-    <meta name="description" content="A resume and portfolio of Peter Bellaby">
-    <meta name="author" content="Peter Bellaby">
+    <?php include "templates/meta-data.html" ?>
 
     <title>Survey</title>
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-    <!-- Loading various libraries -->
-    <!-- <script src="libraries/p5.min.js"></script> -->
 
     <!-- React with JSX -->
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
@@ -26,33 +17,14 @@
 
 <body>
 
-    <div class="sidebar" id="sidebar">
-        <div class="nav">
-            <h1 class="nav-title">Main Page</h1>
-            <nav>
-                <ul>
-                    <li class="nav-item"><a href="index.html" class="nav-item-a">Top Page</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-item-a">About Me</a></li>
-                    <li class="nav-item"><a href="programming.html" class="nav-item-a">Programming</a></li>
-                    <li class="nav-item"><a href="dandd.html" class="nav-item-a">D&D</a></li>
-                    <li class="nav-item"><a href="materium_existentiae.html" class="nav-item-a">The Materium
-                            Existentiae</a>
-                    </li>
-                    <li class="nav-item"><a href="https://www.github.com/Tamillis" class="nav-item-a"
-                            target="_blank">Github</a>
-                    </li>
-                    <li class="nav-item"><a href="mailto:bellaby1993@gmail.com?subject=Enquiry for Peter Bellaby"
-                            class="nav-item-a">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+    <?php include "templates/sidebar.html" ?>
 
-    <button class="nav-btn" onClick="toggleNav()">&#9776;</button>
+    <button class="nav-btn" id="nav-btn" onClick="toggleNav()">&#9776;</button>
 
-    <section class="section" id="app">
+    <section class="section">
         <!-- Main Content Here -->
         <p class="subtitle">WIP</p>
+        <div id="survey-app"></div>
     </section>
 
     <footer id="footer" class="main-footer">
@@ -80,12 +52,12 @@
                 <title>MediaQueries in use</title>
             </svg>
         </div>
-        <p class="footer-text">This is my personal site, all material is of my own make, pulled from publicly available
-            resources, or used with permission. Any enquiries or concerns are welcome via contact. </p>
+        <?php include "templates/footer-inner.html" ?>
     </footer>
 
+    <!-- React Survey App -->
+    <script type="text/babel" src="src/survey.js"></script>
     <script src="functionality.js"></script>
-    <script type="text/babel" src="survey.js"></script>
 
 </body>
 

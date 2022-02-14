@@ -1,3 +1,5 @@
+console.log("hello Im in src/survey.js");
+
 function App() {
     function Question(props) {
         //this is one questoin; a pair of a form of the appropriate type and content/s and a paired submit button
@@ -12,6 +14,7 @@ function App() {
 
         return null;
     }
+
     function CheckBoxQ(props) {
         //check content is an array object
         if (!Array.isArray(props.content)) return <p>Error; Bad content for CheckBoxQ</p>;
@@ -54,12 +57,13 @@ function App() {
     <div>
         <h1>Visitor Survey</h1>
         <p>This is a short demonstration of React being used to build a survey paged.</p>
-        <p>Be sure to check out the results page <a href="#">here</a> to see the data so far, built in Angular.</p>
+        <p>Be sure to check out the results page <a href="#">here</a> to see the data so far.</p>
         <hr /><br/>
         <Question type="CheckBoxQ" question="Is this the first question?" content={["This", "is", "an", "example"]}></Question><br/>
         <Question type="CheckBoxQ" content={3}></Question><br/>
         <Question type="RadioQ" question="And might this be the second?" content={["This", "is", "also", "an", "example"]}></Question><br/>
     </div>)
 }
-const app = <App />;
-ReactDOM.render(app, document.getElementById("app"));
+
+let app = <App />;
+ReactDOM.render(app, document.getElementById("survey-app"));
