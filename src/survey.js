@@ -1,18 +1,25 @@
-console.log("hello Im in src/survey.js");
-
 function App() {
     function Question(props) {
-        //this is one questoin; a pair of a form of the appropriate type and content/s and a paired submit button
+        //this is one question; a label and input element pair
         //for questions with multiple options the props.content is an array of those options
         //otherwise its the defualt submit value. Error checking within subcomponents for more clear error messages
 
+        if (props.type == "Text") return (<TextInput content={props.content} question={props.question} name={props.name}></TextInput>)
         if (props.type == "CheckBoxQ") return (<CheckBoxQ content={props.content} question={props.question}></CheckBoxQ>);
         if (props.type == "RadioQ") return (<RadioQ content={props.content} question={props.question}></RadioQ>);
         // if (props.type == "NumericQ") return (<NumericQ content={props.content}></NumericQ>);
-        // if (props.type == "Date") return (<Date content={props.content}></Date>);
+        // if (props.type == "SelectBoxQ") return (<SelectBoxQ content={props.content}></SelectBoxQ>);
         else return <p>Error: Bad Question</p>;
+    }
 
-        return null;
+    function TextInput(props) {
+        if(Array.isArray(props.content)) return <p>Error; content is an array.</p>;
+        return (
+            <div>
+                <label htmlFor={props.name}>{props.question}</label><br/>
+                <input type="text" id={props.name} name={props.name} value={props.content}/>
+            </div>
+        );
     }
 
     function CheckBoxQ(props) {
@@ -29,7 +36,7 @@ function App() {
                     props.content.map((value, index) => {
                         return (<div>
                             <input type="checkbox" id={"question-" + index} key={"check-key_" + index} name="checkBox1" value={value} />
-                            <label htmlFor={"question-" + index} key={"label-key_" + index}>Question: {value}</label>
+                            <label htmlFor={"question-" + index} key={"label-key_" + index}>{value}</label>
                         </div>)
                     })
                 }
@@ -44,11 +51,15 @@ function App() {
                 props.content.map((value, index) => {
                     return (<div>
                         <input type="radio" id={"radio-q-" + index} key={"radio-key_" + index} name="radioQ1" value={value} />
-                        <label htmlFor={"radio-q-" + index} key={"label-key_" + index}>Label for: {value}</label>
+                        <label htmlFor={"radio-q-" + index} key={"label-key_" + index}>{value}</label>
                     </div>)
                 })
             }
         </form>)
+    }
+
+    function handleSubmit() {
+        alert("Submitted");
     }
 
     //top level App HTML
@@ -59,9 +70,10 @@ function App() {
         <p>This is a short demonstration of React being used to build a survey paged.</p>
         <p>Be sure to check out the results page <a href="#">here</a> to see the data so far.</p>
         <hr /><br/>
-        <Question type="CheckBoxQ" question="Is this the first question?" content={["This", "is", "an", "example"]}></Question><br/>
-        <Question type="CheckBoxQ" content={3}></Question><br/>
-        <Question type="RadioQ" question="And might this be the second?" content={["This", "is", "also", "an", "example"]}></Question><br/>
+        <Question type="Text" question ="What's your online name?" name="handle" content="Harry"></Question>
+        <Question type="CheckBoxQ" question="Which D&D class (or multi-class) are you?" content={["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Paladin", "Monk", "Rogue", "Ranger", "Sorcerer", "Wizard", "Warlock"]}></Question><br/>
+        <Question type="RadioQ" question="What's your gender?" content={["Male", "Female", "Other", "I'd rather not say"]}></Question><br/>
+        <input type="submit" onSubmit={handleSubmit} value="Submit Survey"/>
     </div>)
 }
 
