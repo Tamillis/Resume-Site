@@ -54,8 +54,6 @@
 
         <!-- React Survey App -->
         <script type="text/babel" src="src/survey.js"></script>
-        <script src="functionality.js"></script>
-
     </div>
 
 </body>

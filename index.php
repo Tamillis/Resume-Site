@@ -6,7 +6,7 @@
   <title>Main Page</title>
 
   <script src="libraries/p5.min.js"></script>
-  <script src="banner-text-loader.js" defer></script>
+  <script src="src/banner-text-loader.js" defer></script>
 
 </head>
 
@@ -49,12 +49,8 @@
     </footer>
   </div>
 
-  <script src="functionality.js"></script>
-
-  <script src="flake.js"></script>
-  <script src="snowstorm.js"></script>
-  <script src="terminal.js"></script>
-  <script src="background.js"></script>
+  <script src="src/terminal.js"></script>
+  <?php include "src/bgScripts.html" ?>
 
 </body>
 

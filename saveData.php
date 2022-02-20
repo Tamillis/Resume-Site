@@ -41,7 +41,7 @@ $password = "";
 $dbname = "testdb";
 $tablename = "test";
 
-//check database exists by
+//check database exists by and create it if it doesnt, then close this connection
 $sqlConn = new mysqli($servername, $username, $password);
 
 //check connection

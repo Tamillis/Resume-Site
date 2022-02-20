@@ -125,8 +125,8 @@ const surveyApp = () => {
         return (
             <div className="main-text">
                 <h1 className="main-title">Visitor Survey</h1>
-                <p>This is a short demonstration of React being used to build a survey paged.</p>
-                <p>Be sure to check out the results page <a href="#">here</a> to see the data so far.</p>
+                <p>This is a short demonstration of React being used to build a survey page, check the input for errors and malicious input, and send it on to the database.</p>
+                <p>Be sure to check out the Statistics page <a className="intext-link" href="#">here</a> or via the sidebar to see the data collected so far presented using graphical tools.</p>
                 <hr className="rule" /><br />
                 <form onSubmit={handleSubmit}>
                     <TextInput question="What's your online name?" name="handle" content="Harry"></TextInput><br />

@@ -105,8 +105,6 @@
       <?php include "templates/footer-inner.html" ?>
     </footer>
   </div>
-
-  <script src="functionality.js"></script>
 </body>
 
 </html>

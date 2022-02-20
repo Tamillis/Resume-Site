@@ -7,8 +7,7 @@
     <title>About Me</title>
 
     <script src="libraries/three.js" defer></script>
-    <script src="functionality.js" defer></script>
-    <script src="globe.js" defer></script>
+    <script src="src/globe.js" defer></script>
 
 </head>
 
