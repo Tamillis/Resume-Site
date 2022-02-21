@@ -34,24 +34,29 @@ const surveyApp = () => {
             //With initial data an object built from the dndClassList as the keys and all the values as false
             let checkBoxDataInitialState = {};
             props.content.forEach(element => checkBoxDataInitialState[element] = false);
+            //set a default checked item to "Fighter"
+            checkBoxDataInitialState.Fighter = true;
             const [state, setState] = React.useState(checkBoxDataInitialState);
 
             function handleChange(event) {
                 //check if a number of checkboxes equal to the multiClassLimit have already been checked and the clicked checkbox is not checked, returning out
-                if(atMultiClassLimit(multiClassLimit) && !state[event.target.value]) return;
+                if (atSelectedLimit(multiClassLimit) && !state[event.target.value]) return;
+
+                //check that the last checked box, that theres only one box checked and its this events box, isn't being unchecked, return out
+                if (atSelectedLimit(1) && state[event.target.value]) return;
 
                 //the new state has to use the spread operator to force a new object to be made, to keep the state immutable and thereby allow React to notice updates
-                let newState = {...state};
+                let newState = { ...state };
                 newState[event.target.value] = state[event.target.value] ? false : true;
                 setState(newState);
             }
 
-            function atMultiClassLimit(limit) {
+            function atSelectedLimit(limit) {
                 //little helper function that checks to see if there is already the given limit of trues in the values of the state object
                 let array = Object.values(state);
                 let count = 0;
-                array.forEach(element => {if(element) count++});
-                return count >= limit;
+                array.forEach(element => { if (element) count++ });
+                return count == limit;
             }
 
             //return the form
@@ -64,7 +69,7 @@ const surveyApp = () => {
                         //also note that the key attribute used by react to track things must be the top of this particular DOM tree, otherwise it throws errors
                         Object.keys(state).map((key, index) => {
                             return (<div key={props.name + index}>
-                                <input type="checkbox" id={"question-" + index} name={props.name} value={key} checked={state[key]} onChange={handleChange} />
+                                <input type="checkbox" id={"question-" + index} name={props.name} value={key} checked={state[key]} onChange={handleChange}/>
                                 <label htmlFor={"question-" + index}>{key}</label>
                             </div>)
                         })
@@ -78,6 +83,13 @@ const surveyApp = () => {
                 <p>{props.question}</p>
                 {
                     props.content.map((value, index) => {
+                        if (index == 0) return (
+                            <div key={props.name + index}>
+                                <input type="radio" id={"radio-q-" + index} name={props.name} value={value} defaultChecked/>
+                                <label htmlFor={"radio-q-" + index}>{value}</label>
+                            </div>
+                        );
+
                         return (<div key={props.name + index}>
                             <input type="radio" id={"radio-q-" + index} name={props.name} value={value} />
                             <label htmlFor={"radio-q-" + index}>{value}</label>
@@ -116,8 +128,8 @@ const surveyApp = () => {
         }
 
         function handleSubmit(event) {
-            alert("Submitted");
-            event.preventDefault();
+            console.log(event.target);
+            //event.preventDefault();
         }
 
         //top level App HTML
@@ -128,7 +140,7 @@ const surveyApp = () => {
                 <p>This is a short demonstration of React being used to build a survey page, check the input for errors and malicious input, and send it on to the database.</p>
                 <p>Be sure to check out the Statistics page <a className="intext-link" href="#">here</a> or via the sidebar to see the data collected so far presented using graphical tools.</p>
                 <hr className="rule" /><br />
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} target="localDataHandler.php" method="POST">
                     <TextInput question="What's your online name?" name="handle" content="Harry"></TextInput><br />
                     <SelectBoxQ question="What country are you from?" name="country" content={countriesArray}></SelectBoxQ><br />
                     <NumericQ name="age" question="How old are you?" content={18}></NumericQ><br />

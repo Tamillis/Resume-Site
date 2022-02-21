@@ -27,6 +27,11 @@
             <!-- Main Content Here -->
             <p class="subtitle">WIP</p>
             <div id="survey-app"></div>
+
+            <hr class="rule">
+
+            <?php include "localDataHandler.php" ?>
+            
         </section>
 
         <footer id="footer" class="main-footer">
