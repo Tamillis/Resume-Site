@@ -1,22 +1,20 @@
 //put the app in a closure to prevent any global scope shenanigans
 const surveyApp = () => {
     //global variables of this app
-    let countriesArray = [];
+    let countriesArray = [];    //to be loaded in from assets/countries.json
     let dndClassList = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Paladin", "Monk", "Ranger", "Rogue", "Sorcerer", "Wizard", "Warlock"];
     let multiClassLimit = 3;
-    let genderOptions = ["Male", "Female", "Other", "I'd rather not say"];
+    let genderOptions = ["Male", "Female", "Other", "Rather not say"];
 
     async function loadCountryData() {
         countriesArray = await fetch("assets/countries.json").then(res => res.json());
-        // console.log(countriesArray[69]);
     }
 
     //main react app for the survey
     function App() {
-        // const [data, setData] = React.useState([]);
 
         function TextInput(props) {
-            if (Array.isArray(props.content)) return <p>Error; content is an array.</p>;
+            //TODO: make this a controlled component and check that the content contains only alpha-numeric letters
             return (
                 <div>
                     <label htmlFor={props.name}>{props.question}</label><br />
@@ -59,7 +57,7 @@ const surveyApp = () => {
                 return count == limit;
             }
 
-            //return the form
+            //return the main App, i.e. form
             return (
                 <div>
                     <p>{props.question}</p>
@@ -67,9 +65,10 @@ const surveyApp = () => {
                         //each checkbox question has more than one box to check, so map the content array out
                         //and format each according to the state, including the value to make it a "controlled component" where only state data is used
                         //also note that the key attribute used by react to track things must be the top of this particular DOM tree, otherwise it throws errors
+                        //also the name of the set must end in [] to force it to be an array when sent/delivered to the action surveyDataHandler.php
                         Object.keys(state).map((key, index) => {
                             return (<div key={props.name + index}>
-                                <input type="checkbox" id={"question-" + index} name={props.name} value={key} checked={state[key]} onChange={handleChange}/>
+                                <input type="checkbox" id={"question-" + index} name={props.name + "[]"} value={key} checked={state[key]} onChange={handleChange}/>
                                 <label htmlFor={"question-" + index}>{key}</label>
                             </div>)
                         })
@@ -77,8 +76,8 @@ const surveyApp = () => {
 
                 </div>);
         }
+
         function RadioQ(props) {
-            if (!Array.isArray(props.content)) return <p>Radio question has bad content</p>;
             return (<div>
                 <p>{props.question}</p>
                 {
@@ -140,12 +139,12 @@ const surveyApp = () => {
                 <p>This is a short demonstration of React being used to build a survey page, check the input for errors and malicious input, and send it on to the database.</p>
                 <p>Be sure to check out the Statistics page <a className="intext-link" href="#">here</a> or via the sidebar to see the data collected so far presented using graphical tools.</p>
                 <hr className="rule" /><br />
-                <form onSubmit={handleSubmit} target="localDataHandler.php _parent" method="POST">
+                <form onSubmit={handleSubmit} target="surveyDataHandler.php _self" method="POST">
                     <TextInput question="What's your online name?" name="handle" content="Harry"></TextInput><br />
                     <SelectBoxQ question="What country are you from?" name="country" content={countriesArray}></SelectBoxQ><br />
                     <NumericQ name="age" question="How old are you?" content={18}></NumericQ><br />
                     <RadioQ content={genderOptions} question="What's your gender?" name="gender"></RadioQ><br />
-                    <CheckBoxQ question="Which D&D class (up to 3 multi-class) would you be?" content={dndClassList} name="class"></CheckBoxQ><br />
+                    <CheckBoxQ question="Which D&D class would you be? (Choose 1 or up to 3 for a multi-class" content={dndClassList} name="class"></CheckBoxQ><br />
                     <input type="submit" value="Submit Survey" />
                 </form>
             </div>)

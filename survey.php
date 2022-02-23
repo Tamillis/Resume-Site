@@ -30,7 +30,7 @@
 
             <hr class="rule">
 
-            <?php include "localDataHandler.php" ?>
+            <?php include "surveyDataHandler.php" ?>
             
         </section>
 
