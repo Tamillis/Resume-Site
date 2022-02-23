@@ -1,6 +1,9 @@
 <?php
 //A handler for when POST data is sent from a form page
 
+//first check if POST is empty otherwise return out
+if (empty($_POST)) return;
+
 //Please note that this is XAMPP data that, obviously, doesn't contain the live server's info, as that is breach of security
 $servername = "localhost";
 $username = "root";
@@ -43,30 +46,33 @@ foreach($dndclass as $class) {
 
 $sql = "CREATE TABLE IF NOT EXISTS $tablename (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        $handle VARCHAR(30),
-        $country VARCHAR(60),
-        $gender VARCHAR(20)
+        handle VARCHAR(30),
+        country VARCHAR(60),
+        gender VARCHAR(20)
         $dndclassSql)";
+
+// echo $sql . "<br>";
 
 $dbConn->query($sql);
 
 //finally, insert data into a table in a database
-$values = $_POST["handle"] . "', " . $_POST["country"] . "', " . $_POST["age"] . ", '" . $_POST["gender"];
+$values = "'" . $_POST["handle"] . "', '" . $_POST["country"] . "', " . $_POST["age"] . ", '" . $_POST["gender"] . "'";
 $classValues = "";
 
 // TODO
-// foreach($dndclass as $class) {
-//     $dndclassSql = "$dndclassSql, $class ";
-// }
-
-$sql = "INSERT INTO " . $tablename . " (Name, Age, Gender) VALUES ('" . $values . "')";
-
-if ($dbConn->query($sql) === TRUE) {
-    $lastID = $dbConn->insert_id;
-    echo "New record ID" . $lastID . " created successfully";
-} else {
-    echo "Error: " . $dbConn->error;
+foreach($dndclass as $class) {
+    if($_POST["class"] === $class) $classValues .= ",'1'";
+    else $classValues .= ",'0'";
 }
+
+//concat
+$values .= $classValues;
+
+$sql = "INSERT INTO $tablename VALUES (" . $values . ")";
+
+// echo $sql;
+
+$dbConn->query($sql);
 
 $dbConn->close();
 ?>

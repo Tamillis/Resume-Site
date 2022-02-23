@@ -128,7 +128,7 @@ const surveyApp = () => {
         }
 
         function handleSubmit(event) {
-            console.log(event.target);
+            //TODO use localStorage to flag a user as having submitted already, if so prevent the default behaviour
             //event.preventDefault();
         }
 
@@ -140,7 +140,7 @@ const surveyApp = () => {
                 <p>This is a short demonstration of React being used to build a survey page, check the input for errors and malicious input, and send it on to the database.</p>
                 <p>Be sure to check out the Statistics page <a className="intext-link" href="#">here</a> or via the sidebar to see the data collected so far presented using graphical tools.</p>
                 <hr className="rule" /><br />
-                <form onSubmit={handleSubmit} target="localDataHandler.php" method="POST">
+                <form onSubmit={handleSubmit} target="localDataHandler.php _parent" method="POST">
                     <TextInput question="What's your online name?" name="handle" content="Harry"></TextInput><br />
                     <SelectBoxQ question="What country are you from?" name="country" content={countriesArray}></SelectBoxQ><br />
                     <NumericQ name="age" question="How old are you?" content={18}></NumericQ><br />
