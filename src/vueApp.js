@@ -8,11 +8,15 @@ Vue.createApp({
         introText: 'Hello Vue!',
         explaText: "Here is the explanation.",
         graphData: {
-            title: "TItle",
-            xTitle: "X bar",
-            yTitle: "Y bar",
             x: [0,1,2,3,4,5],
             y: [0,1,2,3,4,5],
+            mode: "lines",
+            type: "scatter",
+        },
+        graphLayout : {
+            title: "Test",
+            xaxis: {range: [0,6], title:"X-Axis"},
+            yaxis: {range: [0,6], title:"Y-Axis"},
         }
       }
     },
@@ -20,9 +24,13 @@ Vue.createApp({
     methods: {
         changeText() {
             this.introText = "A new message."
-        }
+        },
 
         //TODO: create method that handles the plotly graph generation using the dummy data
+        plotGraph() {
+            let graphElement = document.getElementById("graph");
+            Plotly.newPlot(graphElement, this.graphData, this.graphLayout);
+        }
 
         //TODO: create a method to read in the desired current graph data
     }
