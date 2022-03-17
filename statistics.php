@@ -21,36 +21,14 @@
         <hr class="rule">
         <div id="app">
             <p id="introText">{{ introText }}</p>
-            <div id="graph"></div>
+            <div class="graph-container"><div id="graph"></div></div>
             <!-- TODO: create a proper selection interface -->
-            <button @click="plotGraph">Click Me</button>
+            <button @click="nextGraph" class="btn">Next</button>
             <p id="expalText">{{ explaText }}</p>
         </div>
         <hr class="rule">
     </section>
 </body>
-
-<script>
-    let graphElement = document.getElementById("graph");
-    let graphData = {
-        x: [0, 1, 2, 3, 4, 5],
-        y: [0, 1, 2, 3, 4, 5],
-        mode: "lines",
-        type: "scatter",
-    };
-    let graphLayout = {
-        title: "Test",
-        xaxis: {
-            range: [0, 6],
-            title: "X-Axis"
-        },
-        yaxis: {
-            range: [0, 6],
-            title: "Y-Axis"
-        },
-    };
-    Plotly.newPlot(graphElement, this.graphData, this.graphLayout);
-</script>
 
 <footer id="footer" class="main-footer">
     <label class="footer-text align-right" for="demo-div">This site demos: </label>

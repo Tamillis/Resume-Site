@@ -4,34 +4,58 @@
 
 Vue.createApp({
     data() {
-      return {
-        introText: 'Hello Vue!',
-        explaText: "Here is the explanation.",
-        graphData: {
-            x: [0,1,2,3,4,5],
-            y: [0,1,2,3,4,5],
-            mode: "lines",
-            type: "scatter",
-        },
-        graphLayout : {
-            title: "Test",
-            xaxis: {range: [0,6], title:"X-Axis"},
-            yaxis: {range: [0,6], title:"Y-Axis"},
+        return {
+            introText: 'Here will be the original question',
+            explaText: "Here is the explanation of the graph.",
+            graphDataIndex: 0,
+            graphData: [{
+                x: [0, 1, 2, 3, 4, 5],
+                y: [0, 1, 2, 3, 4, 5],
+                mode: "points",
+                type: "scatter",
+            }, {
+                x: [2, 2, 2, 2, 2, 2],
+                y: [0, 1, 2, 3, 4, 5],
+                mode: "points",
+                type: "scatter"
+            }, {
+                x: [0, 1, 2, 3, 4, 5],
+                y: [2, 2, 2, 2, 2, 2],
+                mode: "points",
+                type: "scatter"
+            }],
+            graphLayout: {
+                title: "Test",
+                xaxis: { range: [0, 6], title: "X-Axis" },
+                yaxis: { range: [0, 6], title: "Y-Axis" },
+            },
+            //TODO: set up fixed data that isnt extracted: title, type, layout information
         }
-      }
     },
 
     methods: {
-        changeText() {
-            this.introText = "A new message."
+        plotGraph() {
+            Plotly.newPlot("graph", [this.graphData[this.graphDataIndex]], this.graphLayout);
         },
 
-        //TODO: create method that handles the plotly graph generation using the dummy data
-        plotGraph() {
-            let graphElement = document.getElementById("graph");
-            Plotly.newPlot(graphElement, this.graphData, this.graphLayout);
-        }
+        nextGraph() {
+            this.graphDataIndex++;
+            if (this.graphDataIndex >= this.graphData.length) this.graphDataIndex = 0;
+            this.plotGraph();
+        },
 
         //TODO: create a method to read in the desired current graph data
+        loadData() {
+
+        }
+    },
+
+    mounted() {
+        this.plotGraph();
     }
-  }).mount('#app')
+}).mount('#app');
+
+//TODO: fetch functions require async/await so shove loadData() here
+async function loadData() {
+    //await fetch();
+}

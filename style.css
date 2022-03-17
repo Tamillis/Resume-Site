@@ -416,6 +416,22 @@ body {
   overflow: none;
 }
 
+/* Unique CSS for the Statistics page */
+
+.graph-container {
+  height: 70vh;
+  width: 600px;
+  padding: 0px;
+  margin: 10px auto;
+  
+  outline: var(--highlight) 4px groove;
+}
+
+#graph {
+  width: 100%;
+  height: 100%;
+}
+
 /* TODO fix up styling for Materium Existantiae page */
 /* Materium Existentiae unique CSS */
 
