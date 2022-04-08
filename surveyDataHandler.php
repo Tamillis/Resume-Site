@@ -1,5 +1,5 @@
 <?php
-//A handler for when POST data is sent from the survey page&s form
+//A handler for when POST data is sent from the survey page's form
 
 //first check if POST is empty otherwise return out
 if (empty($_POST)) return;
@@ -15,13 +15,13 @@ $tablename = "surveytable";
 $dndclasses = array("Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Paladin", "Monk", "Ranger", "Rogue", "Sorcerer", "Wizard", "Warlock");
 
 //extracting and processing the POST data into more usable php variables
-$handle = test_input($_POST["handle"]);
+$handle = clean_input($_POST["handle"]);    //as this is a raw text field it needs to be made safe vs CSR attacks
 $country = $_POST["country"];
 $age = $_POST["age"];
 $gender = $_POST["gender"];
 $classesChosen = $_POST["class"];
 
-function test_input($data) {
+function clean_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
@@ -61,8 +61,6 @@ $sql = "CREATE TABLE IF NOT EXISTS $tablename (
         age INT(6),
         gender VARCHAR(20)
         $dndclassSql)";
-
-// echo $sql . "<br>";
 
 $dbConn->query($sql);
 

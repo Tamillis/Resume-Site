@@ -15,19 +15,31 @@
 
 <body>
 
-    <section class="section">
-        <h1 class="main-title">Survey Statistics</h1>
-        <p>This page is built using Vue3 and plotly.js. Below is a dynamic display for each set of data, with vue handling the view and plotly powering the various visualisations.</p>
-        <hr class="rule">
-        <div id="app">
-            <p id="introText">{{ introText }}</p>
-            <div class="graph-container"><div id="graph"></div></div>
-            <!-- TODO: create a proper selection interface -->
-            <button @click="nextGraph" class="btn">Next</button>
-            <p id="expalText">{{ explaText }}</p>
-        </div>
-        <hr class="rule">
-    </section>
+    <?php include "templates/sidebar.html" ?>
+
+    <button class="nav-btn" id="nav-btn" onClick="toggleNav()">&#9776;</button>
+
+    <div id="not-sidebar">
+
+        <section class="section">
+            <p class="subtitle">WIP</p>
+            <h1 class="main-title">Survey Statistics</h1>
+            <p>This page is built using Vue3 and plotly.js. Below is a dynamic display for each set of data, with vue handling the view and plotly powering the various visualisations.</p>
+            <hr class="rule">
+
+            <!-- The in page Vue App demonstration starts here -->
+            <div id="app">
+                <p id="introText">{{ introText }}</p>
+                <div class="graph-container">
+                    <div id="graph"></div>
+                </div>
+                <!-- TODO: create a proper selection interface -->
+                <button @click="nextGraph" class="btn">Next</button>
+                <p id="expalText">{{ explaText }}</p>
+            </div>
+            <hr class="rule">
+        </section>
+    </div>
 </body>
 
 <footer id="footer" class="main-footer">

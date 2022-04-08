@@ -25,7 +25,6 @@
 
         <section class="section">
             <!-- Main Content Here -->
-            <p class="subtitle">WIP</p>
             <div id="survey-app"></div>
 
             <hr class="rule">

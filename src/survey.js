@@ -2,7 +2,7 @@
 const surveyApp = () => {
     //global variables of this app
     let countriesArray = [];    //to be loaded in from assets/countries.json
-    let dndClassList = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Paladin", "Monk", "Ranger", "Rogue", "Sorcerer", "Wizard", "Warlock"];
+    const dndClassList = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Paladin", "Monk", "Ranger", "Rogue", "Sorcerer", "Wizard", "Warlock"];
     let multiClassLimit = 3;
     let genderOptions = ["Male", "Female", "Other", "Rather not say"];
 
@@ -14,11 +14,24 @@ const surveyApp = () => {
     function App() {
 
         function TextInput(props) {
-            //TODO: make this a controlled component and check that the content contains only alpha-numeric letters
+            //check that the content contains only alpha-numeric letters using controlled state name, setName
+            const [name, setName] = React.useState(props.content);
+
+            function handleChange(event) {
+                let newName = event.target.value;
+                let oldName = name;
+                if(onlyAlphaNumeric(newName)) setName(newName);
+                else setName(oldName);
+            }
+
+            function onlyAlphaNumeric(string) {
+                return /^[a-z0-9]+$/i.test(string);
+            }
+
             return (
                 <div>
-                    <label htmlFor={props.name}>{props.question}</label><br />
-                    <input type="text" id={props.name} name={props.name} defaultValue={props.content} />
+                    <label htmlFor={props.name} className="q-label">{props.question}</label><br />
+                    <input type="text" id={props.name} name={props.name} onChange={handleChange} value={name} className="textQ"/>
                 </div>
             );
         }
@@ -68,8 +81,8 @@ const surveyApp = () => {
                         //also the name of the set must end in [] to force it to be an array when sent/delivered to the action surveyDataHandler.php
                         Object.keys(state).map((key, index) => {
                             return (<div key={props.name + index}>
-                                <input type="checkbox" id={"question-" + index} name={props.name + "[]"} value={key} checked={state[key]} onChange={handleChange}/>
-                                <label htmlFor={"question-" + index}>{key}</label>
+                                <input type="checkbox" id={"question-" + index} name={props.name + "[]"} value={key} checked={state[key]} onChange={handleChange} className="checkBoxQ"/>
+                                <label htmlFor={"question-" + index} className="q-label">{key}</label>
                             </div>)
                         })
                     }
@@ -84,14 +97,14 @@ const surveyApp = () => {
                     props.content.map((value, index) => {
                         if (index == 0) return (
                             <div key={props.name + index}>
-                                <input type="radio" id={"radio-q-" + index} name={props.name} value={value} defaultChecked/>
-                                <label htmlFor={"radio-q-" + index}>{value}</label>
+                                <input type="radio" id={"radio-q-" + index} name={props.name} value={value} defaultChecked className="radioQ"/>
+                                <label htmlFor={"radio-q-" + index} className="q-label radioQ-label">{value}</label>
                             </div>
                         );
 
                         return (<div key={props.name + index}>
-                            <input type="radio" id={"radio-q-" + index} name={props.name} value={value} />
-                            <label htmlFor={"radio-q-" + index}>{value}</label>
+                            <input type="radio" id={"radio-q-" + index} name={props.name} value={value} className="radioQ"/>
+                            <label htmlFor={"radio-q-" + index} className="q-label radioQ-label">{value}</label>
                         </div>)
                     })
                 }
@@ -101,8 +114,8 @@ const surveyApp = () => {
         function NumericQ(props) {
             return (
                 <div>
-                    <label htmlFor={props.name}>{props.question}</label><br />
-                    <input type="number" max="122" min="0" name={props.name} id={props.name} defaultValue={props.content} />
+                    <label htmlFor={props.name} className="q-label">{props.question}</label><br />
+                    <input type="number" max="122" min="0" name={props.name} id={props.name} defaultValue={props.content} className="numQ"/>
                 </div>
             )
         }
@@ -113,15 +126,10 @@ const surveyApp = () => {
                 return (<option value={country} key={index}>{country}</option>)
             });
 
-            function handleChange(event) {
-                //adapting React docs class example into function component
-                console.log(event.target.value);
-            }
-
             return (
                 <div>
-                    <label htmlFor={props.name}>{props.question}</label><br />
-                    <select name={props.name} id={props.name} onChange={handleChange}>{selectOptions}</select>
+                    <label htmlFor={props.name} className="q-label">{props.question}</label><br />
+                    <select name={props.name} id={props.name} className="selectBoxQ">{selectOptions}</select>
                 </div>
             )
         }
@@ -144,8 +152,8 @@ const surveyApp = () => {
                     <SelectBoxQ question="What country are you from?" name="country" content={countriesArray}></SelectBoxQ><br />
                     <NumericQ name="age" question="How old are you?" content={18}></NumericQ><br />
                     <RadioQ content={genderOptions} question="What's your gender?" name="gender"></RadioQ><br />
-                    <CheckBoxQ question="Which D&D class would you be? (Choose 1 or up to 3 for a multi-class" content={dndClassList} name="class"></CheckBoxQ><br />
-                    <input type="submit" value="Submit Survey" />
+                    <CheckBoxQ question="Which D&D class would you be? (Choose 1 or up to 3 for a multi-class)" content={dndClassList} name="class"></CheckBoxQ><br />
+                    <input type="submit" value="Submit Survey" className="btn"/>
                 </form>
             </div>)
     }
