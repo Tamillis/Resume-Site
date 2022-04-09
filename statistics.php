@@ -5,12 +5,17 @@
     <?php include "templates/meta-data.html" ?>
     <title>Statistics</title>
 
+    <!-- Data handling -->
+    <?php include "src/loadDatabase.php" ?>
+    <script>
+        let columns = '<?=$columns?>';
+        let data = '<?=$data?>';
+    </script>
+
     <!-- Scripts for the view page -->
     <script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="src/vueApp.js" defer></script>
-
-    <?php include "src/loadDatabase.php" ?>
 </head>
 
 <body>

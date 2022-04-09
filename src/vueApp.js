@@ -2,6 +2,10 @@
 
 //TODO: add data and methods as necessary, but let the template written straight into the php html handle things
 
+// check access to DATA from PHP
+console.log(columns);
+console.log(data);
+
 Vue.createApp({
     data() {
         return {
