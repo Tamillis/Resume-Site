@@ -145,7 +145,7 @@ const surveyApp = () => {
             <div className="main-text">
                 <h1 className="main-title">Visitor Survey</h1>
                 <p>This is a short demonstration of React being used to build a survey page, check the input for errors and malicious input, and send it on to the database.</p>
-                <p>Be sure to check out the Statistics page <a className="intext-link" href="#">here</a> or via the sidebar to see the data collected so far presented using graphical tools.</p>
+                <p>Be sure to check out the Statistics page <a className="intext-link" href="./statistics.php">here</a> or via the sidebar to see the data collected so far presented using Vue JS and plotly.js.</p>
                 <hr className="rule" /><br />
                 <form onSubmit={handleSubmit} target="surveyDataHandler.php _self" method="POST">
                     <TextInput question="What's your online name?" name="handle" content="Harry"></TextInput><br />
