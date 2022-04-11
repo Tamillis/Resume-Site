@@ -22,3 +22,4 @@ Well, hello there!
 Works on Chromium, Firefox, Opera and even Edge! (who uses that again?) 
 Legend says the fairies and elves of Wales used the Corgi as steeds for fey warriors. 
 Search Engine Optimized! 
+This site utilizes Responsive Web Design! Try changing the window size and check it out! 

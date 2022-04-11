@@ -30,17 +30,17 @@
 
             <div class="intro-text main-text">
                 <p>
-                    [Updated 13th February 2022]
+                    [Updated 11th April 2022]
                 </p>
                 <p>
-                    Hi, my name is Peter Bellaby, as you might have already seen on the landing page's mock terminal: a career English teacher, a self-taught programmer and full stack web developer, a fluent speaker of English and Japanese and conversational in Swedish, a happily married man to a lovely wife, a world traveller (places I've been highlighted in red on the globe there) and a massive Dungeons and Dragons geek, primarily in the role as forever-DM (so please let me know if you need a player!) As you can probably see, I'm also a corgi owner and dog-person.</p>
+                    Hi, my name is Peter Bellaby, as you might have already seen on the landing page's mock terminal: a self-taught Full Stack developer, a English Foreign Language teacher, a fluent speaker of Japanese and conversational speaker of Swedish, a happily married man to a lovely wife, a world traveller by way of living in places for years at a time (places I've been highlighted in red on the globe there) and a massive Dungeons and Dragons geek, primarily in the role as forever-DM (so please let me know if you need a player!) As you can probably see, I'm also a corgi owner and dog-person.</p>
 
                 <p>
-                    I’m 6ft tall with blue eyes, have been greying since I was 18, and hail from the rainy island of Great Britain. I currently teach English as a secondary language in the northern island of Hokkaido in Japan, as well as doing translation and various other odd jobs here and there to do with languages or computers, or both. Teaching is one of my passions, and what I have done since completing a TESOL course after graduation from Royal Holloway University of London, where I studied Physics at an undergraduate level. </p>
+                    I’m 6ft tall with blue eyes, have been greying since I was 18, and hail from the rainy island of Great Britain. I freelance web development as programming is one of my passions and the internet is my second home. I also used to teach English as a secondary language in the northern island of Hokkaido in Japan, as well as doing translation and various other odd jobs here and there to do with languages or computers, or both. I've taught ever since completing a TESOL course after graduation from Royal Holloway University of London, where I studied Physics at an undergraduate level. </p>
                 <p>
-                    I’m aware that my focus is pretty scattered, but I like to consider myself a generalist able to tackle and take on any kind of task and excel. At least that’s what I write on my CV!</p>
+                    I’m aware that my focus is pretty scattered, but I like to consider myself a generalist able to tackle and take on any kind of task and excel. A generalist is someone who can specialise anywhere.</p>
 
-                <p>If you have any questions or enquiries, please feel free to contact me via the menu's contact e-mail link or <a href="skype:p.t.bellaby?userinfo" class="intext-link" target="_blank">here</a> on Skype or <a href="https://www.facebook.com/peter.bellaby" class="intext-link" target="_blank">here</a> on Facebook.</p>
+                <p>If you have any questions or enquiries, please feel free to contact me via e-mail (link in sidebar) or <a href="skype:p.t.bellaby?userinfo" class="intext-link" target="_blank">here</a> on Skype or <a href="https://www.linkedin.com/in/peter-bellaby-40b93022b/" class="intext-link" target="_blank">here</a> on LinkedIn.</p>
 
                 <p>
                     Thank you for taking the time to check out the site and this about page.
@@ -52,7 +52,7 @@
             <p class="subtitle-synopsis">The official certificates and education that I possess.</p>
             <div class="main-text">
 
-                <p><span class="inline-subtitle">Full-stack Web Development</span>: where I taught myself using online tools and practice over the course of half a year, building on a foundation of hobbyist interest in programming spanning the last 10 years.</p>
+                <p><span class="inline-subtitle">Full-stack Web Development</span>: where I taught myself using online tools and practice over the course of half a year, building on a foundation of hobbyist interest in programming since university.</p>
 
                 <p>An <span class="inline-subtitle">OCR Level 3 Diploma in Business Administration</span> during a commercial business apprenticeship with ZF Friedrichshafen AG, educated by Solihull College, where I developed a wide base of business skills alongside practical experience managing accounts of cart part manufacturing and supply for various big-names; Jaguar Landrover, Honda, Toyota and others. (Oct 2017 – Oct 2018)</p>
 
@@ -71,20 +71,22 @@
             <p class="subtitle-synopsis">The skills and abilities I bring to a table that haven't been printed on a paper first.</p>
             <div class="main-text">
                 <p>
-                    <span class="inline-subtitle">Programming, IT & Computer Skills</span>, where I am capable of coding in PHP, Javascript, HTML, CSS, MySQL, Java, Basic, Python, C#, as well as quickly picking up any other 3rd generation programming language. I can use these in combination to produce projects, working with GIT as part of a team, and produce websites and other applications from the ground up to deployment. <br>
-                    I've also learned the fundamentals of C++ to the point of being able to build command-line apps. I will be fluent in any spreadsheet and word processing and data-manipulation software you throw at me, at making use of Windows 7, 10 and now 11, with Linux (both Debian and Arch based distros) and any other expected computer literacy. I also build computers as a hobby, and know them literally inside and out. Putting Lubuntu on an old Windows Surface Pro was a fun project I underwent once.
+                    <span class="inline-subtitle">Programming, IT & Computer Skills</span>, where I am capable of coding in Laravel, PHP, JavaScript, HTML, CSS, MySQL, React, Vue, Java, Basic, Python, C#, C++, as well as quickly picking up any other 3rd generation programming language. I can use these in combination to produce projects, working with GIT as part of a team, and produce websites and other language.
+                    <br>
+                    I can use these in combination with best practices, such as SOLID and DRY, other frameworks and technologies, and any new software you need me to learn to produce projects from ideation to deployment, working remotely or in office, in teams and with version control. <br>
+                    I will be fluent in any spreadsheet and word processing and data-manipulation software you throw at me, at making use of Windows 7, 10 and now 11, with Linux (both Debian and Arch based distros) and any other expected computer literacy. I also build computers as a hobby, and know them literally inside and out. Putting Lubuntu on an old Windows Surface Pro was a fun project I underwent once. My personal computer is a frankenstein creation of parts that have gone through a steady cycle of upgrades, and the chip shortage really hurts me.
                 </p>
 
                 <p>
-                    <span class="inline-subtitle">Languages</span>: I speak Japanese fluently, Swedish conversationally and I'm working on French. I hold a JLPT N1 level equivalent level of Japanese, conversing at a native level, and a B1+ (CEFR) level in Swedish, a growing understanding of French as well as a foundational understanding of Spanish and German.
+                    <span class="inline-subtitle">Languages</span>: I speak Japanese fluently, Swedish conversationally and I'm working on French. I hold a JLPT N1 level equivalent level of Japanese, conversing at a native level (literally at a business level for the last 3 years), and a B1+ (CEFR) level in Swedish, a growing understanding of French as well as a foundational understanding of Spanish, German, Esperanto and academic linguistics.
                 </p>
 
                 <p>
-                    <span class="inline-subtitle">Team Worker</span>. No position is an island entire of itself. Proactive teamwork is key and I always try to be an exemplary pillar. I have received excellent feedback during the summer English Language camps I have run; my positions as trainer, team leader and teacher; and in a variety of different fields from not just teaching, but team translation projects, event fairs and as an Events Assistant during my hotel years. Not just working in teams, but building them up to get a job done too; I helped get Co&Co's TOEIC Exam Preparation English course off the ground.
+                    <span class="inline-subtitle">Team Worker</span>. No position is an island entire of itself. Proactive teamwork is key and I always try to be an exemplary pillar. I have received excellent feedback during summer English Language camps I have run; my positions as trainer, team leader and teacher; and in a variety of different fields from not just teaching, but team translation projects, programmathons, and event fairs. But not just working in teams, building them up to get a job done too; I helped get Co&Co's TOEIC Exam Preparation English course off the ground.
                 </p>
 
                 <p>
-                    <span class="inline-subtitle">Project & Time Management</span>. As demonstrated while juggling a part time job with full-time intense University study and work-loads, and organising classes and schedules for my students, I know what to do, how to do it, and most importantly how long things take. I am also not afraid to be upfront if I expect items are not possible within a certain schedule, and I always prioritise the completion of the project at hand to the level required by the specification, within dead-lines.
+                    <span class="inline-subtitle">Project & Time Management</span>. As demonstrated while juggling a part time job with full-time intense University study and work-loads, organising classes and schedules for my students, and completing timed programming challenges, I know what to do, how to do it, and most importantly how long things take. I am also not afraid to be upfront if I expect items are not possible within a certain schedule, and I always prioritise the completion of the project at hand to the level required by the specification, within dead-lines.
                 </p>
 
                 <p>
@@ -96,15 +98,33 @@
                 </p>
             </div>
 
-            <h2 class="subtitle">Work History</h2>
+            <h2 class="subtitle">Work/Travel History</h2>
             <div class="main-text">
-                <p> <span class="subtitle-synopsis underline">English Teaching at Language House, Japan.</span><br>
-                    <span class="inline-subtitle">Dates: </span>March 2019 to present<br>
+                <p> <span class="subtitle-synopsis underline">Freelance Full Stack Web Developer</span><br>
+                    <span class="inline-subtitle">Dates: </span>April 2022 to present<br>
+                    <span class="inline-subtitle">Job Title: </span>Full Stack Web Developer<br>
+                    <span class="inline-subtitle">Details of position: </span>I develop websites using Laravel potentially with Vue for clients from scratch to deployment, and manage their websites if desired as webmaster (and for clients who don't need such services I hand over the reigns of hosted websites once completed). Sitdowns with clients determine the requirements of the site, transaction details, and setup the client-developer relationship, and the schedule for the project. Over the course of the project the client is consulted and adaptions are made, until the site can be deployed.<br>
+                </p>
+                <p> <span class="subtitle-synopsis underline">English Teaching at Language House, Japan</span><br>
+                    <span class="inline-subtitle">Dates: </span>March 2019 to March 2022<br>
                     <span class="inline-subtitle">Company: </span>Language House, Co&Co<br>
                     <span class="inline-subtitle">Address: </span>Japan, 〒060-0002 Hokkaido, Sapporo, Chuo Ward, Kita2, Nishi3, 1-29 Takesato Bldg. 2F<br>
                     <span class="inline-subtitle">Job Title: </span>English Teacher<br>
                     <span class="inline-subtitle">Details of position: </span>I am a full time teacher of English, with a focus on conversational skills as well as general language acquisition, primarily using the Four Corners and Viewpoint textbooks, but also TOEIC and business English texts. Pulling on the 3+ years of teaching experience and technical knowledge of the English language, I guide and lead students through their studies not just in general English, but in exam preparation (primarily for TOEIC but also for Eiken or IELTS), business English, and any other language goal they may have.<br>
                 </p>
+
+                <p> <span class="subtitle-synopsis underline">Studying Japanese in Sapporo, Japan</span><br>
+                    <span class="inline-subtitle">Dates: </span>January 2019 to March 2019<br>
+                    <span class="inline-subtitle">Company: </span>Language House, Co&Co<br>
+                    <span class="inline-subtitle">Address: </span>Japan, 〒060-0002 Hokkaido, Sapporo, Chuo Ward, Kita2, Nishi3, 1-29 Takesato Bldg. 2F<br>
+                    <span class="inline-subtitle">Details of travels: </span>Arriving in the heavy snows of mid-winter Sapporo, I finally was able to follow my passion for Japanese again, joining a school I found recommended online. Having already visited the country in summer in the very hot and humid Kyoto for a month, this time I wanted a winter adventure. Not sure when I would be leaving, I bought a one way ticket. In the end I found a company willing to sponsor me for a visa to be a teacher, the same company in fact that I had studied at, and so changed my life.<br>
+                </p>
+
+                <p> <span class="subtitle-synopsis underline">Travelling in Sweden</span><br>
+                    <span class="inline-subtitle">Dates: </span>November 2018<br>
+                    <span class="inline-subtitle">Details of travel: </span>Having worked in a typical multinational company for a year I was desperate to go back to teaching, but also to really experience Sweden by living there. With that in mind, I decided to job hunt on site and also visit old friends and new, and brush up on my language skills. I travelled from Uppsala to Gothenberg, and it's a month I will not forget. In the end I came home.<br>
+                </p>
+
                 <p> <span class="subtitle-synopsis underline">Commercial Business Apprenticeship, the U.K.</span><br>
                     <span class="inline-subtitle">Dates: </span>October 2017 to October 2018.<br>
                     <span class="inline-subtitle">Company: </span>ZF Friedrichshafen AG<br>
@@ -113,6 +133,14 @@
                     <span class="inline-subtitle">Details of position: </span>I spent a quarter of my time educating myself for the various business units of the apprenticeship, receiving no direct learning, and preparing material as proof. For the company I assisted the global key account manager look after the state of the accounts, tracking missing product and ensuring our commercial customers had their concerns addressed, and received orders correctly and on time. The
                     large bulk of goods and high values required responsibility, due care & attention, and professionalism.<br>
                 </p>
+
+                <p> <span class="subtitle-synopsis underline">Studying Swedish in Uppsala, Sweden</span><br>
+                    <span class="inline-subtitle">Dates: </span>June 2017 to August 2017<br>
+                    <span class="inline-subtitle">Company: </span>Uppsala International Summer Session<br>
+                    <span class="inline-subtitle">Address: </span>Kungsängsgatan 12, 753 22 Uppsala, Sweden<br>
+                    <span class="inline-subtitle">Details of travel: </span>TODO<br>
+                </p>
+
                 <p> <span class="subtitle-synopsis underline">English Teaching at Sym Levice, Slovakia</span><br>
                     <span class="inline-subtitle">Dates: </span>September 2016 to June 2017<br>
                     <span class="inline-subtitle">Company: </span>Speak Your Mind Levice<br>
@@ -120,13 +148,7 @@
                     <span class="inline-subtitle">Job Title: </span>Lektor (Lecturer / Teacher)<br>
                     <span class="inline-subtitle">Details of position: </span>using the Speak Your Mind method I taught all of our students, from children of 8 years to adults in their twilight years, to attain a high level of fluency in English from beginning levels all the way up to professional business English. This method affords me a complete technical understanding of English grammar as well as the ability to easily and clearly communicate and teach to others, regardless of their native language and English ability, as well as teaching other skills and effectively communicate ideas. I was also often responsible for extra classes in local schools, at no extra charge, and was in charge of pronunciation education across the area.<br>
                 </p>
-                <p> <span class="subtitle-synopsis underline">English Teaching at Number 16, Spain</span><br>
-                    <span class="inline-subtitle">Dates: </span>September 2015 to June 2016<br>
-                    <span class="inline-subtitle">Company: </span>Academia de Ingles Number 16 School<br>
-                    <span class="inline-subtitle">Address: </span>Number 16 School, San Miguel 7, 50 001, Zaragoza, Spain<br>
-                    <span class="inline-subtitle">Job Title: </span>English Teacher<br>
-                    <span class="inline-subtitle">Details of position: </span>using the Speak Your Mind method in which they trained me, I taught children from as young as 10 to adults of all ages. Whilst with Number 16 School I trained extensively to perfect my knowledge of English grammar and pronunciation, particularly in regards to teaching these aspects, and on several occasions was offered promotion to position of team leader. There I taught also my fellow teachers about the I.P.A. and its use as a teaching tool and grew into the teacher that I am today, solidifying the training and practice I had earned earlier in the year.<br>
-                </p>
+
                 <p> <span class="subtitle-synopsis underline">Summer School Teaching and Chaperoning in the U.K.</span><br>
                     <span class="inline-subtitle">Dates: </span>July 2015 to August 2015 and July 2016 to August 2016<br>
                     <span class="inline-subtitle">Company: </span>Oxford House College<br>
@@ -134,6 +156,15 @@
                     <span class="inline-subtitle">Job Title: </span>Residential Teacher and Activity Leader<br>
                     <span class="inline-subtitle">Details of position: </span>Twice I have taught children of ages 10 to 17 of various nationalities English from 9am until 3pm six days a week at an English summer camp. I also ran and devised activities that the children took part in. Due to short staffing I worked usually from 9am until 10pm everyday, with breaks. This job gave me over 180 hours of hands on teaching experience during the short span, as well as many more hours being an activity leader and looking after the kids’ well being and ensuring participation.<br>
                 </p>
+                
+                <p> <span class="subtitle-synopsis underline">English Teaching at Number 16, Spain</span><br>
+                    <span class="inline-subtitle">Dates: </span>September 2015 to June 2016<br>
+                    <span class="inline-subtitle">Company: </span>Academia de Ingles Number 16 School<br>
+                    <span class="inline-subtitle">Address: </span>Number 16 School, San Miguel 7, 50 001, Zaragoza, Spain<br>
+                    <span class="inline-subtitle">Job Title: </span>English Teacher<br>
+                    <span class="inline-subtitle">Details of position: </span>using the Speak Your Mind method in which they trained me, I taught children from as young as 10 to adults of all ages. Whilst with Number 16 School I trained extensively to perfect my knowledge of English grammar and pronunciation, particularly in regards to teaching these aspects, and on several occasions was offered promotion to position of team leader. There I taught also my fellow teachers about the I.P.A. and its use as a teaching tool and grew into the teacher that I am today, solidifying the training and practice I had earned earlier in the year.<br>
+                </p>
+
                 <p> <span class="subtitle-synopsis underline">Waiting and Events part-time while at university</span><br>
                     <span class="inline-subtitle">Dates: </span>October 2014 to May 2015<br>
                     <span class="inline-subtitle">Company: </span>Off To Work (working primarily at Coworth Park hotel)<br>

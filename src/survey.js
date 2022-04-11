@@ -22,7 +22,7 @@ const surveyApp = () => {
             function handleChange(event) {
                 let newName = event.target.value;
                 let oldName = name;
-                if(onlyAlphaNumeric(newName)) setName(newName);
+                if (onlyAlphaNumeric(newName)) setName(newName);
                 else setName(oldName);
             }
 
@@ -33,7 +33,7 @@ const surveyApp = () => {
             return (
                 <div>
                     <label htmlFor={props.name} className="q-label">{props.question}</label><br />
-                    <input type="text" id={props.name} name={props.name} onChange={handleChange} value={name} className="textQ"/>
+                    <input type="text" id={props.name} name={props.name} onChange={handleChange} value={name} className="textQ" />
                 </div>
             );
         }
@@ -83,7 +83,7 @@ const surveyApp = () => {
                         //also the name of the set must end in [] to force it to be an array when sent/delivered to the action surveyDataHandler.php
                         Object.keys(state).map((key, index) => {
                             return (<div key={props.name + index}>
-                                <input type="checkbox" id={"question-" + index} name={props.name + "[]"} value={key} checked={state[key]} onChange={handleChange} className="checkBoxQ"/>
+                                <input type="checkbox" id={"question-" + index} name={props.name + "[]"} value={key} checked={state[key]} onChange={handleChange} className="checkBoxQ" />
                                 <label htmlFor={"question-" + index} className="q-label">{key}</label>
                             </div>)
                         })
@@ -99,13 +99,13 @@ const surveyApp = () => {
                     props.content.map((value, index) => {
                         if (index == 0) return (
                             <div key={props.name + index}>
-                                <input type="radio" id={"radio-q-" + index} name={props.name} value={value} defaultChecked className="radioQ"/>
+                                <input type="radio" id={"radio-q-" + index} name={props.name} value={value} defaultChecked className="radioQ" />
                                 <label htmlFor={"radio-q-" + index} className="q-label radioQ-label">{value}</label>
                             </div>
                         );
 
                         return (<div key={props.name + index}>
-                            <input type="radio" id={"radio-q-" + index} name={props.name} value={value} className="radioQ"/>
+                            <input type="radio" id={"radio-q-" + index} name={props.name} value={value} className="radioQ" />
                             <label htmlFor={"radio-q-" + index} className="q-label radioQ-label">{value}</label>
                         </div>)
                     })
@@ -117,7 +117,7 @@ const surveyApp = () => {
             return (
                 <div>
                     <label htmlFor={props.name} className="q-label">{props.question}</label><br />
-                    <input type="number" max="122" min="0" name={props.name} id={props.name} defaultValue={props.content} className="numQ"/>
+                    <input type="number" max="122" min="0" name={props.name} id={props.name} defaultValue={props.content} className="numQ" />
                 </div>
             )
         }
@@ -136,9 +136,28 @@ const surveyApp = () => {
             )
         }
 
-        function handleSubmit(event) {
-            //TODO use localStorage to flag a user as having submitted already, if so prevent the default behaviour
-            //event.preventDefault();
+        function FormForGuest() {
+            const firstTimeSubmit = localStorage.getItem("submitted");
+
+            if (firstTimeSubmit == null) return (
+                <form onSubmit={handleSubmit} action="surveyDataHandler.php" target="" method="POST">
+                    <TextInput question="What's your online name?" name="handle" content="Harry"></TextInput><br />
+                    <SelectBoxQ question="What country are you from?" name="country" content={countriesArray}></SelectBoxQ><br />
+                    <NumericQ name="age" question="How old are you?" content={18}></NumericQ><br />
+                    <RadioQ content={genderOptions} question="What's your gender?" name="gender"></RadioQ><br />
+                    <CheckBoxQ question="Which D&D class would you be? (Choose 1 or up to 3 for a multi-class)" content={dndClassList} name="class"></CheckBoxQ><br />
+                    <input type="submit" value="Submit Survey" className="btn" />
+                </form>);
+
+            else return (
+                <div>
+                    <h3 class="subtitle">Already Submitted</h3>
+                    <p>You have already submitted a survey, sorry :(</p>
+                </div>);
+        }
+
+        function handleSubmit() {
+            localStorage.setItem("submitted", "true");
         }
 
         //top level App HTML
@@ -149,14 +168,7 @@ const surveyApp = () => {
                 <p>This is a short demonstration of React being used to build a survey page, check the input for errors and malicious input, and send it on to the database.</p>
                 <p>Be sure to check out the Statistics page <a className="intext-link" href="./statistics.php">here</a> or via the sidebar to see the data collected so far presented using Vue JS and plotly.js.</p>
                 <hr className="rule" /><br />
-                <form onSubmit={handleSubmit} action="surveyDataHandler.php" target="survey.php" method="POST">
-                    <TextInput question="What's your online name?" name="handle" content="Harry"></TextInput><br />
-                    <SelectBoxQ question="What country are you from?" name="country" content={countriesArray}></SelectBoxQ><br />
-                    <NumericQ name="age" question="How old are you?" content={18}></NumericQ><br />
-                    <RadioQ content={genderOptions} question="What's your gender?" name="gender"></RadioQ><br />
-                    <CheckBoxQ question="Which D&D class would you be? (Choose 1 or up to 3 for a multi-class)" content={dndClassList} name="class"></CheckBoxQ><br />
-                    <input type="submit" value="Submit Survey" className="btn"/>
-                </form>
+                <FormForGuest />
             </div>)
     }
 

@@ -1,7 +1,7 @@
 <?php
 //  A script for loading the data from the database into usable Javacsript global variable "data"
 //　establish connection
-include 'dbconfig.php';
+include 'surveyTableConfig.php';
 
 //select all from the config db
 $query = "select * from $tablename";

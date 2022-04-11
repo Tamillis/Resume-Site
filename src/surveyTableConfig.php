@@ -25,3 +25,23 @@ $dbConn = new mysqli($servername, $username, $password, $dbname);
 if ($dbConn->connect_error) {
     die("Connection failed: " . $dbConn->connect_error);
 }
+
+//a helper array for this database table
+$dndclasses = array("Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Paladin", "Monk", "Ranger", "Rogue", "Sorcerer", "Wizard", "Warlock");
+
+//check if $tablename exists and make it if not
+//generate the sql for a boolean column for each dndclass option
+$dndclassSql ="";
+foreach($dndclasses as $class) {
+    $dndclassSql .= ", $class BOOLEAN";
+}
+
+$sql = "CREATE TABLE IF NOT EXISTS $tablename (
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        handle VARCHAR(30),
+        country VARCHAR(60),
+        age INT(6),
+        gender VARCHAR(20)
+        $dndclassSql)";
+
+$dbConn->query($sql);
