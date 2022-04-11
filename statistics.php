@@ -8,7 +8,6 @@
     <!-- Data handling -->
     <?php include "src/loadDatabase.php" ?>
     <script>
-        let columns = '<?=$columns?>';
         let data = '<?=$data?>';
     </script>
 
@@ -35,6 +34,9 @@
             <!-- The in page Vue App demonstration starts here -->
             <div id="app">
                 <p id="introText">{{ introText }}</p>
+                <p>Raw database dump: </p>
+                <code class="code">{{ inputData }}</code>
+                
                 <div class="graph-container">
                     <div id="graph"></div>
                 </div>

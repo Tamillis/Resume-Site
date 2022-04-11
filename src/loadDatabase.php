@@ -1,17 +1,16 @@
-<?php 
+<?php
 //  A script for loading the data from the database into usable Javacsript global variable "data"
 //　establish connection
 include 'dbconfig.php';
 
+//select all from the config db
 $query = "select * from $tablename";
+$dataResult = $dbConn->query($query);
 
-$dataResult = $dbConn->query($query)->fetch_all();
-$columnsResult = $dbConn->query("SHOW COLUMNS FROM $tablename");
+//fetch key value paired objects for each row, as the column names are needed for use in the data processing
+while($row = $dataResult->fetch_object()) {
+    $data[] = $row;
+};
 
-while($row = $columnsResult->fetch_assoc()){
-    $columns[] = $row['Field'];
-}
-
-$data = json_encode($dataResult);
-$columns = json_encode($columns);
-?>
+//and expose the json object of that
+$data = json_encode($data);

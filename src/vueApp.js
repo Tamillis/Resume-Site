@@ -1,11 +1,5 @@
 //application using view to generate the main display data for the statistics page
 
-//TODO: add data and methods as necessary, but let the template written straight into the php html handle things
-
-// check access to DATA from PHP
-console.log(columns);
-console.log(data);
-
 Vue.createApp({
     data() {
         return {
@@ -33,7 +27,8 @@ Vue.createApp({
                 xaxis: { range: [0, 6], title: "X-Axis" },
                 yaxis: { range: [0, 6], title: "Y-Axis" },
             },
-            //TODO: set up fixed data that isnt extracted: title, type, layout information
+            //TODO: handle input data, which is just an array of objects of all the data from the table, into data appropriate for a plotly graph
+            inputData: data,
         }
     },
 
@@ -47,19 +42,9 @@ Vue.createApp({
             if (this.graphDataIndex >= this.graphData.length) this.graphDataIndex = 0;
             this.plotGraph();
         },
-
-        //TODO: create a method to read in the desired current graph data
-        loadData() {
-
-        }
     },
 
     mounted() {
         this.plotGraph();
     }
 }).mount('#app');
-
-//TODO: fetch functions require async/await so shove loadData() here
-async function loadData() {
-    //await fetch();
-}

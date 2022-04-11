@@ -1,3 +1,5 @@
+//A React in-page app
+
 //put the app in a closure to prevent any global scope shenanigans
 const surveyApp = () => {
     //global variables of this app
@@ -147,7 +149,7 @@ const surveyApp = () => {
                 <p>This is a short demonstration of React being used to build a survey page, check the input for errors and malicious input, and send it on to the database.</p>
                 <p>Be sure to check out the Statistics page <a className="intext-link" href="./statistics.php">here</a> or via the sidebar to see the data collected so far presented using Vue JS and plotly.js.</p>
                 <hr className="rule" /><br />
-                <form onSubmit={handleSubmit} target="surveyDataHandler.php _self" method="POST">
+                <form onSubmit={handleSubmit} action="surveyDataHandler.php" target="survey.php" method="POST">
                     <TextInput question="What's your online name?" name="handle" content="Harry"></TextInput><br />
                     <SelectBoxQ question="What country are you from?" name="country" content={countriesArray}></SelectBoxQ><br />
                     <NumericQ name="age" question="How old are you?" content={18}></NumericQ><br />
