@@ -1,1 +1,1 @@
-| Proficiencies: BASIC Python PyGame Visual Studio Xamarin C# Processing3 (and P5JS) Java VS Code HTML CSS JavaScript C++ Node.js Express.js Phaser React PHP SQL MySQL |
+| Proficiencies: BASIC Python PyGame Visual_Studio Xamarin C# Java JavaScript Processing3 (and P5JS) VS_Code HTML CSS C++ Node.js React PHP SQL MySQL Laravel |

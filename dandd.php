@@ -350,7 +350,7 @@
         function Statbloc(props) {
           return (
             <div className="statbloc-container">
-              <p className="statbloc-items statbloc-label">{props.attribute}: {props.value}</p>
+              <p className="statbloc-items statbloc-label">{props.attribute}: {props.value} ({(Math.floor((props.value - 10) / 2)) >= 0 && "+"}{Math.floor((props.value - 10) / 2)})</p>
               <button className="statbloc-items btn statbloc-btn" type="number" onClick={() => props.onClick(props.attribute, 1)}>+</button>
               <button className="statbloc-items btn statbloc-btn" type="number" onClick={() => props.onClick(props.attribute, -1)}>-</button>
             </div>

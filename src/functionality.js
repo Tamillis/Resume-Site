@@ -57,12 +57,9 @@ function closeDiv(divId) {
 function createIframeInDiv(divId, iframeSrc) {
   const iframe = document.createElement("iframe");
   iframe.src = iframeSrc;
-  // iframe.width = 500;
-  // iframe.height = 520;
   iframe.className = "frame"
 
-  const parentElement = document.getElementById(divId);
-  parentElement.appendChild(iframe);
+  document.getElementById(divId).appendChild(iframe);
 }
 
 function destroyIframe(divId) {
