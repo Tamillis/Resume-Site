@@ -271,6 +271,7 @@ body {
   color: var(--text-color);
   font-style: normal;
   font-weight: bold;
+  overflow-wrap: break-word;
 }
 
 .intext-link:hover {
@@ -582,7 +583,10 @@ input[type=number] {
 }
 
 .statbloc-container {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
 
   width: auto;
   height: 2em;
