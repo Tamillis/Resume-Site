@@ -582,23 +582,33 @@ input[type=number] {
   padding: 1em;
 }
 
+@media screen and (max-width: 600px) {
+  .statbloc-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  
+    width: auto;
+    height: auto;
+    padding: 0px;
+  }
+}
+
 .statbloc-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
 
   width: auto;
-  height: 2em;
+  height: auto;
   padding: 0px;
 }
 
 .statbloc-items {
+  display: inline;
   padding: 0px;
-
-  display: inline-block;
-
-  flex: initial none none;
 }
 
 .statbloc-label {

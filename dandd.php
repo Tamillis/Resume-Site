@@ -350,15 +350,13 @@
         function Statbloc(props) {
           return (
             <div className="statbloc-container">
-              <div>
-                <p className="statbloc-items statbloc-label">{props.attribute}: {props.value} ({(Math.floor((props.value - 10) / 2)) >= 0 && "+"}{Math.floor((props.value - 10) / 2)})</p>
-              </div>
+              <p className="statbloc-items statbloc-label">{props.attribute}: {props.value} ({(Math.floor((props.value - 10) / 2)) >= 0 && "+"}{Math.floor((props.value - 10) / 2)})</p>
               <div>
                 <button className="statbloc-items btn statbloc-btn" type="number" onClick={() => props.onClick(props.attribute, 1)}>+</button>
                 <button className="statbloc-items btn statbloc-btn" type="number" onClick={() => props.onClick(props.attribute, -1)}>-</button>
               </div>
             </div>
-          )
+            )
         }
 
         //create array of appropriate statbloc components
@@ -378,7 +376,7 @@
           <div className="app-main">
             <div className="calculator-body">
               <p className="main-text inline-subtitle underline">{"Points: " + currPointTotal + " / " + POINTMAX}</p>
-              {stats}
+              <div className="statblocs-container">{stats}</div>
             </div>
             <table className="table app-table">
               <tbody>
