@@ -151,7 +151,7 @@ const surveyApp = () => {
 
             else return (
                 <div>
-                    <h3 class="subtitle">Already Submitted</h3>
+                    <h3 className="subtitle">Already Submitted</h3>
                     <p>You have already submitted a survey, sorry :(</p>
                 </div>);
         }
