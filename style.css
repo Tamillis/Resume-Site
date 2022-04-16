@@ -458,7 +458,7 @@ body {
 .textQ, .numQ, .selectBoxQ {
   border: none;
   border-radius: 0px;
-  width: fit-content;
+
   margin-left: 2em;
   padding: 4px 2px;
 
@@ -496,6 +496,17 @@ input[type=number] {
 
 .checkBoxQ:checked, .radioQ:checked {
   background: white;
+}
+
+.error-box {
+  border: red 2px solid;
+  width: fit-content;
+  padding-right: 2rem;
+}
+
+.error-text {
+  color: red;
+  font-weight: bold;
 }
 
 /* TODO fix up styling for Materium Existantiae page */

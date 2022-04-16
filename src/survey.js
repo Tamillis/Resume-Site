@@ -18,18 +18,31 @@ const surveyApp = () => {
         function TextInput(props) {
             //check that the content contains only alpha-numeric letters using controlled state name, setName
             const [name, setName] = React.useState(props.content);
+            const [blank, setBlank] = React.useState((props.content === ""));
 
             function handleChange(event) {
                 let newName = event.target.value;
-                let oldName = name;
-                if (onlyAlphaNumeric(newName)) setName(newName);
-                else setName(oldName);
+
+                //return out if not only alphanumeric or not blank
+                if (!onlyAlphaNumeric(newName) && newName !== "") return;
+
+                if(newName === "") setBlank(true);
+                else setBlank(false);
+
+                setName(newName);
             }
 
             function onlyAlphaNumeric(string) {
                 return /^[a-z0-9]+$/i.test(string);
             }
 
+            if (blank) return (
+                <div className="error-box">
+                    <label htmlFor={props.name} className="q-label">{props.question}</label><br />
+                    <input type="text" id={props.name} name={props.name} onChange={handleChange} value={name} className="textQ" />
+                    <p className="error-text">Blank handles are not allowed.</p>
+                </div>
+            );
             return (
                 <div>
                     <label htmlFor={props.name} className="q-label">{props.question}</label><br />
@@ -43,7 +56,7 @@ const surveyApp = () => {
             if (!Array.isArray(props.content)) return <p>Error; Bad content for CheckBoxQ</p>;
 
             //This needs to be a "controlled component" where the input data is handled via state
-            //As these are funciton components, state is handle via hook
+            //As these are funciton components, state is handled via hook
             //With initial data an object built from the dndClassList as the keys and all the values as false
             let checkBoxDataInitialState = {};
             props.content.forEach(element => checkBoxDataInitialState[element] = false);
@@ -114,10 +127,27 @@ const surveyApp = () => {
         }
 
         function NumericQ(props) {
+            const [age, setAge] = React.useState(0);
+
+            function handleChange(event) {
+                //check the input is valid, if not switch conditional flag and set error message
+                let newAge = event.target.value;
+
+                //return out of non-numbers
+                if (/\D/g.test(newAge)) return;
+
+                //whole numbers only
+                newAge = Math.floor(newAge);
+                //0 is minimum, 122 is maximum
+                if (newAge < 0 || newAge > 122) return;
+
+                setAge(newAge);
+            }
+
             return (
                 <div>
                     <label htmlFor={props.name} className="q-label">{props.question}</label><br />
-                    <input type="number" max="122" min="0" name={props.name} id={props.name} defaultValue={props.content} className="numQ" />
+                    <input name={props.name} id={props.name} value={age} className="numQ" onChange={handleChange} />
                 </div>
             )
         }
@@ -125,25 +155,25 @@ const surveyApp = () => {
         function SelectBoxQ(props) {
             let data = props.content;
             let selectOptions = data.map((country, index) => {
-                return (<option value={country} key={index}>{country}</option>)
+                return (<option value={country} key={index}>{country}</option>);
             });
 
             return (
                 <div>
                     <label htmlFor={props.name} className="q-label">{props.question}</label><br />
-                    <select name={props.name} id={props.name} className="selectBoxQ">{selectOptions}</select>
+                    <select name={props.name} id={props.name} className="selectBoxQ" defaultValue={"United Kingdom"}>{selectOptions}</select>
                 </div>
             )
         }
 
-        function FormForGuest() {
+        function OneSubmitionForm() {
             const firstTimeSubmit = localStorage.getItem("submitted");
 
             if (firstTimeSubmit == null) return (
                 <form onSubmit={handleSubmit} action="surveyDataHandler.php" target="" method="POST">
-                    <TextInput question="What's your online name?" name="handle" content="Harry"></TextInput><br />
+                    <TextInput question="What's your online handle?" name="handle" content=""></TextInput><br />
                     <SelectBoxQ question="What country are you from?" name="country" content={countriesArray}></SelectBoxQ><br />
-                    <NumericQ name="age" question="How old are you?" content={18}></NumericQ><br />
+                    <NumericQ name="age" question="How old are you?"></NumericQ><br />
                     <RadioQ content={genderOptions} question="What's your gender?" name="gender"></RadioQ><br />
                     <CheckBoxQ question="Which D&D class would you be? (Choose 1 or up to 3 for a multi-class)" content={dndClassList} name="class"></CheckBoxQ><br />
                     <input type="submit" value="Submit Survey" className="btn" />
@@ -168,7 +198,7 @@ const surveyApp = () => {
                 <p>This is a short demonstration of React being used to build a survey page, check the input for errors and malicious input, and send it on to the database.</p>
                 <p>Be sure to check out the Statistics page <a className="intext-link" href="./statistics.php">here</a> or via the sidebar to see the data collected so far presented using Vue JS and plotly.js.</p>
                 <hr className="rule" /><br />
-                <FormForGuest />
+                <OneSubmitionForm />
             </div>)
     }
 
