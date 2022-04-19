@@ -27,8 +27,8 @@ Vue.createApp({
                 xaxis: { range: [0, 6], title: "X-Axis" },
                 yaxis: { range: [0, 6], title: "Y-Axis" },
             },
-            //TODO: handle input data, which is just an array of objects of all the data from the table, into data appropriate for a plotly graph
-            inputData: data,
+
+            inputData: JSON.parse(data),
         }
     },
 
@@ -42,9 +42,41 @@ Vue.createApp({
             if (this.graphDataIndex >= this.graphData.length) this.graphDataIndex = 0;
             this.plotGraph();
         },
+
+        genAgeHistogram(data) {
+            //x is age brackets, y is number of people in each bracket
+            //brackets
+            let brackets = ["0 to 9", "10 to 19", "20 to 29", "30 to 39", "40 to 59", "60 to 79", "80+"];
+            let bracketCutoffs = [9, 19, 29, 39, 59, 79, 122];
+
+            //from the raw input data, fetch just the array of all ages
+            let ages = [];
+            data.forEach(survey => ages.push(parseInt(survey.age)));
+
+            //calculate the population of each bracket using the cutoff values
+            let bracketPopulations = this.calcBracketPops(ages, bracketCutoffs);
+        },
+
+        calcBracketPops(ageData, bracketCutoffs) {
+            //calculate population of each age bracket using its cutoff, returning the correct array of data
+
+            bracketCutoffs.forEach(cutoff => {
+                //for each cut off, go through the data array and count valid ages and slice them out, so they dont get double counted
+            });
+        }
     },
 
     mounted() {
+        //TODO: the following boot up functions
+
+        //generate age range histogram data
+        this.genAgeHistogram(this.inputData);
+
+        //generate gender pie chart data
+
+        //generate country pie chart data
+
+        //generate class bar graph with pure vs multiclass split
         this.plotGraph();
     }
 }).mount('#app');
