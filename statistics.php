@@ -32,17 +32,15 @@
             <hr class="rule">
 
             <!-- The in page Vue App demonstration starts here -->
-            <div id="app">
-                <p id="introText">{{ introText }}</p>
-                <p>Raw database dump: </p>
-                <code class="code">{{ inputData }}</code>
+            <div id="app" class="main-text">
+                <div class="intro-text"><p id="introText" class="">{{ originalQ[graphIndex] }}</p></div>
                 
                 <div class="graph-container">
                     <div id="graph"></div>
                 </div>
                 <!-- TODO: create a proper selection interface -->
                 <button @click="nextGraph" class="btn">Next</button>
-                <p id="expalText">{{ explaText }}</p>
+                <p id="expalText">{{ explaText[graphIndex] }}</p>
             </div>
             <hr class="rule">
         </section>

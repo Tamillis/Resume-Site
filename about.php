@@ -30,7 +30,7 @@
 
             <div class="intro-text main-text">
                 <p>
-                    [Updated 11th April 2022]
+                    [Updated 19th April 2022]
                 </p>
                 <p>
                     Hi, my name is Peter Bellaby, as you might have already seen on the landing page's mock terminal: a self-taught Full Stack developer, a English Foreign Language teacher, a fluent speaker of Japanese and conversational speaker of Swedish, a happily married man to a lovely wife, a world traveller by way of living in places for years at a time (places I've been highlighted in red on the globe there) and a massive Dungeons and Dragons geek, primarily in the role as forever-DM (so please let me know if you need a player!) As you can probably see, I'm also a corgi owner and dog-person.</p>
