@@ -50,7 +50,7 @@ Vue.createApp({
             let bracketPopulations = this.calcBracketPops(ages, bracketCutoffs);
 
             //push original question text
-            this.originalQ.push("What gender are you?");
+            this.originalQ.push("What is your age?");
 
             //push explanation text
             this.explaText.push("This is a histogram of the ages of those who've taken the survey. The brackets are as they are over each decade of life except for the latter two, which show condensed brackets for practicality and the low number of online users at that age. Although I'm sure in the years to come that will naturally change.");
