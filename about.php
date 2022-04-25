@@ -30,10 +30,10 @@
 
             <div class="intro-text main-text">
                 <p>
-                    [Updated 19th April 2022]
+                    [Updated 25th April 2022]
                 </p>
                 <p>
-                    Hi, my name is Peter Bellaby, as you might have already seen on the landing page's mock terminal: a self-taught Full Stack developer, a English Foreign Language teacher, a fluent speaker of Japanese and conversational speaker of Swedish, a happily married man to a lovely wife, a world traveller by way of living in places for years at a time (places I've been highlighted in red on the globe there) and a massive Dungeons and Dragons geek, primarily in the role as forever-DM (so please let me know if you need a player!) As you can probably see, I'm also a corgi owner and dog-person.</p>
+                    Hi, my name is Peter Bellaby, as you might have already seen on the landing page's mock terminal: a self-taught Full Stack developer, an English Foreign Language teacher, a fluent speaker of Japanese and conversational speaker of Swedish, a happily married man to a lovely wife, a world traveller by way of living in places for years at a time (places I've been highlighted in red on the globe there) and a massive Dungeons and Dragons geek, primarily in the role as forever-DM (so please let me know if you need a player!) As you can probably see, I'm also a corgi owner and dog-person.</p>
 
                 <p>
                     I’m 6ft tall with blue eyes, have been greying since I was 18, and hail from the rainy island of Great Britain. I freelance web development as programming is one of my passions and the internet is my second home. I also used to teach English as a secondary language in the northern island of Hokkaido in Japan, as well as doing translation and various other odd jobs here and there to do with languages or computers, or both. I've taught ever since completing a TESOL course after graduation from Royal Holloway University of London, where I studied Physics at an undergraduate level. </p>

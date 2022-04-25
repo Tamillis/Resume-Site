@@ -24,7 +24,8 @@ Vue.createApp({
 
     methods: {
         plotGraph() {
-            Plotly.newPlot("graph", [this.graphData[this.graphIndex]], this.graphLayoutData[this.graphIndex]);
+            //simple shorthand function
+            Plotly.newPlot("graph", [this.graphData[this.graphIndex]], this.graphLayoutData[this.graphIndex], {responsive: true});
         },
 
         nextGraph() {
@@ -57,27 +58,68 @@ Vue.createApp({
 
             //put new graph data in
             let [x, y, mode, type] = [brackets, bracketPopulations, "", "bar"];
-            this.putNewGraphData(x, y, mode, type);
-
-            //put new graph layout data in
-            let [title, xaxisTitle, yaxisTitle] = ["Age Histogram", "Age Brackets", "Count"];
-            this.putNewLayoutData(title, xaxisTitle, yaxisTitle);
-        },
-
-        putNewGraphData(x, y, mode, type) {
             this.graphData.push({
                 x: x,
                 y: y,
                 mode: mode,
                 type: type
             });
-        },
 
-        putNewLayoutData(title, xaxisTitle, yaxisTitle) {
+            //put new graph layout data in
+            let [title, xaxisTitle, yaxisTitle] = ["Age Histogram", "Age Brackets", "Count"];
             this.graphLayoutData.push({
                 title: title,
                 xaxis: { title: xaxisTitle },
                 yaxis: { title: yaxisTitle },
+            });
+        },
+
+        genGenderPie() {
+            //gender pie chart
+            let title = "Gender Ratio"
+            let labels = ["Male", "Female", "Other", "Rather not say"];
+            let [maleCount, femaleCount, otherCount, rnsCount] = [0, 0, 0, 0];
+
+            //generate array of counts to match array of gender options
+            this.inputData.forEach(survey => {
+                switch (survey.gender) {
+                    case "Male":
+                        maleCount++;
+                        break;
+                    case "Female":
+                        femaleCount++;
+                        break;
+                    case "Other":
+                        otherCount++;
+                        break;
+                    case "Rather not say":
+                        rnsCount++;
+                        break;
+                    default:
+                        console.log("Not found gender")
+                        break;
+                }
+            });
+
+            let genderValues = [maleCount, femaleCount, otherCount, rnsCount];
+
+            //push original question text
+            this.originalQ.push("What is your gender?");
+
+            //push explanation text
+            this.explaText.push("This is a pie chart showing the ratio of reported genders of those surveyed.");
+
+
+            //push graph data
+            this.graphData.push({
+                labels: labels,
+                values: genderValues,
+                type: "pie"
+            });
+
+            //push graph layout data
+            this.graphLayoutData.push({
+                title: title
             })
         },
 
@@ -112,6 +154,7 @@ Vue.createApp({
             this.genAgeHistogram();
 
             //generate gender pie chart data
+            this.genGenderPie();
 
             //generate country pie chart data
 
