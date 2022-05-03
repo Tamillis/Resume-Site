@@ -25,7 +25,7 @@ Vue.createApp({
     methods: {
         plotGraph() {
             //simple shorthand function
-            Plotly.newPlot("graph", [this.graphData[this.graphIndex]], this.graphLayoutData[this.graphIndex], {responsive: true});
+            Plotly.newPlot("graph", [this.graphData[this.graphIndex]], this.graphLayoutData[this.graphIndex], { responsive: true });
         },
 
         nextGraph() {
@@ -123,6 +123,48 @@ Vue.createApp({
             })
         },
 
+        genCountryPie() {
+            let title = "Country Counts";
+
+            //in this instance the options are not fixed, but instead generated from non zero countries
+            //and each of these dynamic labels needs to be counted, so use an object with properties appended later
+            let labels = [];
+            let counts = {};
+            //check each answer given and if it is not in the labels array, push it in, and count each country
+            this.inputData.forEach(survey => {
+                if (!labels.includes(survey.country)) {
+                    labels.push(survey.country);
+                    counts[survey.country] = 1;
+                } else {
+                    counts[survey.country]++;
+                }
+            });
+
+            //sort the labels alphabetically
+            labels.sort();
+            //gen an array that is just the counts from the counts object using the label as the property accessor, et voila
+            let values = labels.map(label => counts[label]);
+
+            //push original question text
+            this.originalQ.push("What country are you from?");
+
+            //push explanation text
+            this.explaText.push("This is a pie chart showing the numbers of each country that the surveyed come from.");
+
+
+            //push graph data
+            this.graphData.push({
+                labels: labels,
+                values: values,
+                type: "pie"
+            });
+
+            //push graph layout data
+            this.graphLayoutData.push({
+                title: title
+            })
+        },
+
         calcBracketPops(ageData, bracketCutoffs) {
             //calculate population of each age bracket using its cutoff, returning the correct array of data
 
@@ -157,6 +199,7 @@ Vue.createApp({
             this.genGenderPie();
 
             //generate country pie chart data
+            this.genCountryPie();
 
             //generate class bar graph with pure vs multiclass split
         }
