@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /Resume-Site/
+RewriteRule ^index.php$ - [L]
+RewriteRule ^programming/?$ /programming.php [L]
+RewriteRule ^about/?$ /about.php [L]
+RewriteRule ^dandd/?$ /dandd.php [L]
+RewriteRule ^statistics/?$ /statistics.php [L]
+RewriteRule ^survey/?$ /survey.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
