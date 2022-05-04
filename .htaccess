@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /Resume-Site/
+RewriteBase /
 RewriteRule ^index.php$ - [L]
 RewriteRule ^programming/?$ /programming.php [L]
 RewriteRule ^about/?$ /about.php [L]

@@ -25,10 +25,14 @@ body {
   height: min(auto, 80vh);
 }
 
-/* Generic small classes for easy modification when writting the HTML */
+/* Generic utility classes for easy modification when writting the HTML */
 
 .align-right {
   text-align: right;
+}
+
+.ml0 {
+  margin-left: 0px !important;
 }
 
 .no-bg {
@@ -94,6 +98,12 @@ body {
 .square-20px {
   width: 20px;
   height: 20px;
+}
+
+.no-border-top {
+  border-top: none !important;
+  padding-top: none !important;
+  margin-top: none !important;
 }
 
 /* CSS for the sidebar, which was built up from a borrowed "navigation bar" example, hence the "nav" naming */
@@ -431,7 +441,7 @@ body {
   padding: 0px;
   margin: 10px auto;
 
-  outline: var(--highlight) 4px groove;
+  outline: #41b883 4px groove;
 }
 
 @media (min-width: 700px) {
@@ -443,6 +453,32 @@ body {
 #graph {
   width: 100%;
   height: 100%;
+}
+
+#handles-canvas {
+  width: 100%;
+  height: 100%;
+  margin: none !important;
+  padding: none !important;
+  border: blue 1px solid;
+}
+
+#handles-canvas>canvas {
+  width: 100%;
+  height: 100%;
+  margin: none !important;
+  padding: none !important;
+  border: red 1px solid;
+}
+
+#vue-app {
+  margin: 2rem 1rem;
+  padding: 0px 5px;
+}
+
+.vue-colors {
+  background-color: #34495E;
+  border: #41b883 groove 4px;
 }
 
 /* Unique CSS for the survey page */

@@ -19,6 +19,7 @@ Vue.createApp({
             }],
 
             inputData: JSON.parse(data),
+            graphCanvasToggle: true,
         }
     },
 
@@ -165,6 +166,41 @@ Vue.createApp({
             })
         },
 
+        genClassGraph() {
+            //the basic graph lists how often each class was chosen
+            //helper array. Could possible be generated from input data keys but its a pain.
+            let options = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"];
+
+            let values = options.map(option => {
+                let count = 0;
+                this.inputData.forEach(survey => count += parseInt(survey[option]));
+                return count;
+            });
+
+            //push original question text
+            this.originalQ.push("What would your D&D class be?");
+
+            //push explanation text
+            this.explaText.push("D&D is a favourite past time of mine, and a fun little question I could draw from it would be the hypothetical what would you be? And in D&D terms that means race or class, or both. I decided to keep things simple and stick to the classes, as there are only 12 in core D&D and every player knows them.");
+
+            //put new graph data in
+            let [x, y, mode, type] = [options, values, "", "bar"];
+            this.graphData.push({
+                x: x,
+                y: y,
+                mode: mode,
+                type: type
+            });
+
+            //put new graph layout data in
+            let [title, xaxisTitle, yaxisTitle] = ["D&D Classes Chosen", "Classes", "Count"];
+            this.graphLayoutData.push({
+                title: title,
+                xaxis: { title: xaxisTitle },
+                yaxis: { title: yaxisTitle },
+            });
+        },
+
         calcBracketPops(ageData, bracketCutoffs) {
             //calculate population of each age bracket using its cutoff, returning the correct array of data
 
@@ -202,6 +238,7 @@ Vue.createApp({
             this.genCountryPie();
 
             //generate class bar graph with pure vs multiclass split
+            this.genClassGraph();
         }
     },
 
@@ -214,5 +251,8 @@ Vue.createApp({
 
         //plot the initial graph
         this.plotGraph();
+
+        //load the P5JS sketch
+        let handles = new p5(handleGlyphs, "handles-canvas");
     }
-}).mount('#app');
+}).mount('#vue-app');

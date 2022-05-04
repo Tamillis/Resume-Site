@@ -8,13 +8,16 @@
     <!-- Data handling -->
     <?php include "src/loadDatabase.php" ?>
     <script>
-        let data = '<?=$data?>';
+        let data = '<?= $data ?>';
     </script>
 
     <!-- Scripts for the view page -->
     <script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
     <script src="https://unpkg.com/vue@3"></script>
+    <script src="libraries/p5.min.js"></script>
+    <script src="src/handleGlyphs.js"></script>
     <script src="src/vueApp.js" defer></script>
+    
 </head>
 
 <body>
@@ -29,20 +32,35 @@
             <p class="subtitle">WIP</p>
             <h1 class="main-title">Survey Statistics</h1>
             <p>This page is built using Vue3 and plotly.js. Below is a dynamic display for each set of data, with vue handling the view and plotly powering the various visualisations.</p>
-            <hr class="rule">
+            <!-- <hr class="rule"> -->
 
             <!-- The in page Vue App demonstration starts here -->
-            <div id="app" class="main-text">
-                <div class="intro-text"><p id="introText" class="">{{ originalQ[graphIndex] }}</p></div>
-                
-                <div class="graph-container">
-                    <div id="graph"></div>
+            <div id="vue-app" class="main-text vue-colors">
+                <button @click="graphCanvasToggle = !graphCanvasToggle" class="btn vue-colors no-border-top">Show {{graphCanvasToggle ? "Handles" : "Graphs"}}</button>
+                <div id="graph-wrapper" v-show="graphCanvasToggle">
+                    <div class="subsubtitle">
+                        <p>{{ originalQ[graphIndex] }}</p>
+                    </div>
+
+                    <div class="graph-container">
+                        <div id="graph"></div>
+                    </div>
+                    <!-- TODO: create a proper selection interface -->
+                    <button @click="nextGraph" class="btn vue-colors">Next</button>
+                    <p id="expalText">{{ explaText[graphIndex] }}</p>
                 </div>
-                <!-- TODO: create a proper selection interface -->
-                <button @click="nextGraph" class="btn">Next</button>
-                <p id="expalText">{{ explaText[graphIndex] }}</p>
+                <div id="handle-canvas-wrapper" v-show="!graphCanvasToggle">
+                    <div class="subsubtitle">
+                        <p>Handle Glyphs</p>
+                    </div>
+                    <div class="graph-container">
+                        <div id="handles-canvas"></div>
+                    </div>
+
+                    <p>The handles of everyone in the database, generated using P5JS into unique glyphs. Hover over them to see the original Handle.</p>
+                </div>
             </div>
-            <hr class="rule">
+            <!-- <hr class="rule"> -->
         </section>
     </div>
 </body>
