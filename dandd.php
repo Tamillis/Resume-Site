@@ -35,7 +35,7 @@
         </p>
 
         <p>I&#39;ve been running it for over 10 years since I was 16, and by far the most popular system at my tables has
-          been Dungeons and Dragons 5th Edition. My grandest of world building projects, also visible on this site, is my
+          been Dungeons and Dragons 5th Edition. My grandest of world building projects is my
           go
           to setting for it, and itself was built around the assumed setting that D&amp;D functions around.</p>
         <p>For players in my games, this page is a starting point of any campaign for them to dig into the slight changes
@@ -185,7 +185,7 @@
           AC) by their enemy, meaning creatures in melee provide cover for each other. Creatures in 5ft with creatures two
           sizes larger are in three-quarters cover (+5 bonus to AC). Don’t shoot your allies now!
         </p>
-        <p><span class="inline-subtitle">Improved Standard Array </span>– we will be using my version of the standard
+        <p><span class="inline-subtitle">Improved Standard Array* </span>– we will be using my version of the standard
           array. I find the original a little
           underwhelming for Heroic Adventuring, and also poorly balanced between odd and even values. So, we will use;
           16, 14, 13, 11, 10, 9
