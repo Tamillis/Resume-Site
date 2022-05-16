@@ -215,7 +215,7 @@
         </p>
         <p>Meanwhile, chases and chasing another creature is a skill challenge and is not invalidated by the speed value
           of one creature being greater than another’s. Large speed differences can grant advantages/disadvantages to
-          certain rolls depending on how the player has their character interact with the chase, but otherwise a
+          certain rolls depending on how the player has their character interact with the chase, but otherwise
           characters in combat &quot;Movement&quot; value doesn&#39;t affect chases.
         </p>
         <p><span class="inline-subtitle">Unstable Platform </span>– when shooting from an unstable platform, such as
